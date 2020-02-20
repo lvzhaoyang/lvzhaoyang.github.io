@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Project 1: Hybrid Images</title>
+    <link href="./Project 1_ Hybrid Images_files/style.css" rel="stylesheet" type="text/css">
+<style type="text/css" media="all">
+#primarycontent {
+    margin-left: auto;  
+    width: expression(document.body.clientWidth > 995? "995px": "auto" );
+    margin-right: auto;
+    text-align: left;
+    max-width: 995px 
+}
+</style></head>
+
+
+
+<body>
+<div id="primarycontent">
+
+<center>
+<img src="./Project 1_ Hybrid Images_files/hybrid_image.jpg" width="410" height="361">
+<br>
+(Look at image on right from very close, then from far away.)
+</center>
+
+<h1> Project 1: Image Filtering and Hybrid Images<br>
+<a href="https://www.cc.gatech.edu/~zlv30/courses/CS4476.html">CS 4476: Computer Vision</a>
+</h1>
+
+<h2>Brief</h2> 
+<ul> 
+  <li>Due: 22/5/2018 11:59 PM</li>  
+  </li><li>Project files and handin: through <a href="https://gatech.instructure.com/">Canvas</a> </li> 
+  <li>Required files: code/ </li> 
+</ul> 
+
+<h2>Overview</h2>
+
+<p>The goal of this assignment is to write an image filtering function and use it to create <a href="http://cvcl.mit.edu/hybrid_gallery/gallery.html">hybrid images</a> using a simplified version of the SIGGRAPH 2006 <a href="http://cvcl.mit.edu/publications/OlivaTorralb_Hybrid_Siggraph06.pdf">paper</a> by Oliva, Torralba, and Schyns.
+<i>Hybrid images</i> are static images that change in interpretation as a
+ function of the viewing distance.
+The basic idea is that high frequency tends to dominate perception when 
+it is available, but, at a distance, only the low frequency (smooth) 
+part of the signal can be seen.
+By blending the high frequency portion of one image with the 
+low-frequency portion of another, you get a hybrid image that leads to 
+different interpretations at different distances.
+</p>
+<br>
+
+<h2>Setup</h2>
+<p>
+  </p><ol>
+    <li>Install <a href="https://conda.io/miniconda.html">Miniconda</a>. It doesn't matter whether you use 2.7 or 3.6 because we will create our own environment anyways.</li>
+    <li>Create a conda environment, using the appropriate command. On 
+Windows, open the installed "Conda prompt" to run this command. On MacOS
+ and Linux, you can just use a terminal window to run the command.
+ Modify the command based on your OS ('linux', 'mac', or 'win'): <br><code>conda env create -f environment_&lt;OS&gt;.yml</code></li>
+    <li>This should create an environment named 'cs4476'. Activate it using the following Windows command:<br><code>activate cs4476</code><br>or the following MacOS / Linux command:<br><code>source activate cs4476</code></li>
+    <li>Run the notebook using:<br><code>jupyter notebook ./code/proj1.ipynb</code></li>
+    <li>Generate the submission once you've finished the project using:<br><code>python zip_submission.py</code></li>
+  </ol>
+<p></p>
+
+<h2>Details</h2>
+
+<p>
+This project is intended to familiarize you with Python and image 
+filtering. Once you have created an image filtering function, it is 
+relatively straightforward to construct hybrid images. 
+If you don't already know Python, you may find this <a href="https://docs.python.org/3/tutorial/">resource</a> helpful. If you are more familiar with Matlab, <a href="http://mathesaurus.sourceforge.net/matlab-numpy.html">this guide</a> is very helpful.
+</p><p>
+<b>Step1 Image Filtering.</b> Image filtering (or convolution) is a fundamental image processing tool. 
+See chapter 3.2 of Szeliski and the lecture materials to learn about image filtering (specifically linear filtering). 
+You will be writing your own function to implement image filtering from scratch. More specifically, you will implement 
+<code>my_imfilter()</code> which imitates the <code>filter2D</code> function in the OpenCV library. As specified in <code>student_code.py</code>,
+ your filtering algorithm must (1) support grayscale and color images 
+(2) support arbitrary shaped filters, as long as both dimensions are odd
+ (e.g. 7x9 filters but not 4x5 filters) (3) pad the input image with 
+zeros or reflected image content and (4) return a filtered image which 
+is the same resolution as the input image. We have provided an iPython 
+notebook, <code>proj1_test_filtering.ipynb</code>, to help you debug your image filtering algorithm.
+
+</p><p>
+<b>Step2 Hybrid Images.</b> A hybrid image is the sum of a low-pass filtered version of the one image and a high-pass filtered version of a second image. 
+There is a free parameter, which can be tuned for each image pair, which controls <i>how much</i>
+ high frequency to remove from the first image and how much low 
+frequency to leave in the second image. 
+This is called the "cutoff-frequency". In the paper it is suggested to 
+use two cutoff frequencies (one tuned for each image) and you are free 
+to try that, as well. 
+In the starter code, the cutoff frequency is controlled by changing the 
+standard deviation of the Gausian filter used in constructing the hybrid
+ images.
+You will implement <code>create_hybrid_image()</code> according to the starter code in <code>student_code.py</code>. Your function will call <code>my_imfilter()</code> to create low and high frequency images and then
+combine them into a hybrid image.
+</p><p>
+We provide you with 5 pairs of aligned images which can be merged 
+reasonably well into hybrid images. The alignment is important because 
+it affects the perceptual grouping (read the paper for details). We 
+encourage you to create additional examples (e.g. change of expression, 
+morph between different objects, change over time, etc.). See the <a href="http://cvcl.mit.edu/hybrid_gallery/gallery.html">hybrid images project page</a> for some inspiration. The project page also contains materials from their <a href="http://cvcl.mit.edu/publications/publications.html">SIGGRAPH presentation</a>.
+</p><p>
+For the example shown at the top of the page, the two original images look like this:
+</p><p>
+</p><center><img src="./Project 1_ Hybrid Images_files/dog.jpg"><img src="./Project 1_ Hybrid Images_files/cat.jpg"></center>
+<p></p><p>
+The low-pass (blurred) and high-pass versions of these images look like this:
+</p><p>
+</p><center><img src="./Project 1_ Hybrid Images_files/low_frequencies.jpg"><img src="./Project 1_ Hybrid Images_files/high_frequencies.jpg"></center>
+<p></p><p>
+The high frequency image is actually zero-mean with negative values so 
+it is visualized by adding 0.5. In the resulting visualization, bright 
+values are positive and dark values are negative.
+</p><p>
+Adding the high and low frequencies together gives you the image at the 
+top of this page. If you're having trouble seeing the multiple 
+interpretations of the image, a useful way to visualize the effect is by
+ progressively downsampling the hybrid image as is done below:
+</p><p>
+</p><center><img src="./Project 1_ Hybrid Images_files/cat_hybrid_image_scales.jpg"></center>
+<p></p><p>
+The starter code provides a function <code>vis_hybrid_image</code> in utils.py which can be used to save and display such visualizations.
+
+</p><p>
+<b>Potentially useful NumPy (Python library) functions</b>: <code>np.pad()</code>, which does many kinds of image padding for you, <code>np.clip()</code>, which 'clips' out any values in an array outside of a specified range, <code>np.sum()</code>, and <code>np.multiply()</code>,
+ which makes it efficient to do the convolution (dot product) between 
+the filter and windows of the image. Documentation for numpy can be 
+found <a href="https://docs.scipy.org/doc/numpy/">here</a> or by googling the function in question.
+<br>
+<b>Forbidden functions</b> (you can use these for testing, but not in 
+your final code): anything in OpenCV, and anything that takes care of 
+the filtering operation for you. If it feels like you're sidestepping 
+the work, then it's probably not allowed. Ask the TAs if you have any 
+doubts.
+<br>
+<b>Editing Code</b>: You can use any method you want to edit the student_code.py file. 
+You may use a simple text editor like <a href="https://www.sublimetext.com/3">Sublime Text</a>, 
+an IDE like <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, or
+ even just editing the code in browser from the iPython notebook home 
+page. Google "Python editor" to find a litany of additional suggestions.
+</p><br>
+
+<h2> Bells &amp; Whistles (Extra Points)</h2>
+<p>
+For later projects there will be more concrete extra credit suggestions.
+ It is possible to get extra credit for this project, as well, if you 
+come up with some clever extensions which impress the TAs.
+</p>
+<br>
+
+
+
+<h2> Rubric </h2>
+<ul> 
+   <li> +50 pts: Working implementation of image filtering in <code>my_imfilter()</code></li>
+   <li> +30 pts: Working hybrid image generation in <code>create_hybrid_image()</code></li>
+   <li> +10 pts: Experiment with several examples of hybrid images</li>
+   <li> +10 pts: Filling out the TO DO cell in ipython notebook to explain your algorithm and analyze your results </li>
+   <li> -5*n pts: Lose 5 points for every time you do not follow the instructions for the hand in format </li>
+</ul>
+<br>
+
+
+<h2> Handing in </h2>
+<p>
+This is very important as you will lose points if you do not follow 
+instructions. Every time after the first that you do not follow 
+instructions, you will lose 5 points. The folder you hand in must 
+contain the following:
+</p>
+<ul>
+    <li> code/ - directory containing all your code for this assignment</li>
+</ul>
+
+<p>
+Please KEEP THE CELL OUTPUT in your sumitted ipython notebook file(.ipynb), which is located under code folder.
+</p>
+<p>
+<b>Do not use absolute paths</b> in your code or your webpage (e.g. <code>/user/GeorgePBurdell/classes/CompVision/proj1</code>).
+ Your code may break if you use absolute paths and you 
+will lose points because of it. Simply use relative paths as the starter
+ code already does. Do not turn in the /data/ folder unless you have 
+added new data.
+
+Hand in your project as a zip file through <a href="https://gatech.instructure.com/">Canvas</a>. You can create this zip file using <br><code>python zip_submission.py</code>.
+</p>
+<br>
+<h2>Credits</h2>
+<p>Original assignment developed by Samarth Brahmbhatt, Sean Foley, and James Hays based on a similar project by Derek Hoiem. Edited by Zhaoyang Lv, Miao Liu.
+
+</p></div>
+
+
+
+
+</body></html>

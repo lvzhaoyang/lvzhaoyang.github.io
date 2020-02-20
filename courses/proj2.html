@@ -1,0 +1,255 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Project 2: Local Feature Matching</title>
+    <link href="./Project 2_ Local Feature Matching_files/style.css" rel="stylesheet" type="text/css">
+<style type="text/css" media="all">
+#primarycontent {
+    margin-left: auto;
+    width: expression(document.body.clientWidth > 995? "995px": "auto" );
+    margin-right: auto;
+    text-align: left;
+    max-width: 995px
+}
+</style><style type="text/css"></style></head>
+
+
+
+<body>
+<div id="primarycontent">
+
+<center>
+<img src="./Project 2_ Local Feature Matching_files/matches.jpg" width="906" height="607">
+<br>
+The top 100 most confident local feature matches from a baseline implementation of project 2. In this case, 89 were correct (lines shown in green) and 11 were incorrect (lines shown in red).
+</center>
+
+<h1> Project 2: Local Feature Matching<br>
+<a href="https://www.cc.gatech.edu/~zlv30/courses/CS4476.html">CS 4476: Computer Vision</a>
+</h1>
+
+<h2>Brief</h2>
+<ul>
+  <li>Due: Wednesday, June 5th, 2019 11:55pm</li>
+  <li>Project materials including writeup template <a href="https://gatech.instructure.com/">Canvas->files->proj2.zip</a>.</li>
+  <li>Additional scenes to test on <a href="https://gatech.instructure.com/">Canvas->files->extra_data.zip</a>.
+  </li><li>Handin: through <a href="https://gatech.instructure.com/">Canvas->Assignment</a> </li>
+  <li>Required files: README, code/, pdf/</li>
+</ul>
+
+<h2>Overview</h2>
+
+<p>The goal of this assignment is to create a local feature matching algorithm using techniques described in Szeliski chapter 4.1. The pipeline we suggest is a simplified version of the famous <a href="http://www.cs.ubc.ca/~lowe/keypoints/">SIFT</a> pipeline. The matching pipeline is intended to work for <i>instance-level</i> matching -- multiple views of the same physical scene.
+</p>
+
+<h2>Setup</h2>
+<p>
+  <h3>(if you successfully set up your conda environment for project 1, you can skip this part and reactivate environment <code> cs4476 </code>)</h3>
+  <ol>
+    <li>Install <a href="https://conda.io/miniconda.html">Miniconda</a>. It doesn't matter whether you use 2.7 or 3.6 because we will create our own environment anyways.</li>
+    <li>Create a conda environment, using the appropriate command. On Windows, open the installed "Conda prompt" to run this command. On MacOS and Linux, you can just use a terminal window to run the command.
+ Modify the command based on your OS ('linux', 'mac', or 'win'): <br><code>conda env create -f environment_&lt;OS&gt;.yml</code></li>
+    <li>This should create an environment named 'cs4476'. Activate it using the following Windows command:<br><code>activate cs4476</code><br>or the following MacOS / Linux command:<br><code>source activate cs4476</code></li>
+    <li>Run the notebook using:<br><code>jupyter notebook ./code/proj2.ipynb</code></li>
+    <li>Generate the submission once you've finished the project using:<br><code>python zip_submission.py</code></li>
+  </ol>
+</p>
+
+<h2>Details</h2>
+
+<p>
+For this project, you need to implement the three major steps of a local feature matching algorithm:
+</p>
+<ul>
+  <li>Interest point detection in <code>student_harris.py</code> (see Szeliski 4.1.1)</li>
+  <li>Local feature description in <code>student_sift.py</code> (see Szeliski 4.1.2)</li>
+  <li>Feature Matching in <code>student_feature_matching.py</code> (see Szeliski 4.1.3)</li>
+</ul>
+
+<p>
+There are numerous papers in the computer vision literature addressing each stage. For this project, we will suggest specific, relatively simple algorithms for each stage. You are encouraged to experiment with more sophisticated algorithms!
+</p>
+
+<h2>Interest point detection (<code>student_harris.py</code> )</h2>
+<p>
+You will implement the Harris corner detector as described in the lecture materials and Szeliski 4.1.1. See Algorithm 4.1 in the textbook for pseudocode.
+ The starter code gives some additional suggestions. You do not need to worry about scale invariance or keypoint orientation estimation for your baseline Harris corner detector.  The original paper by Chris Harris and Mike Stephens describing their corner detector can be found <a href="http://www.bmva.org/bmvc/1988/avc-88-023.pdf">here</a>. </p>
+
+ <p> 
+  You will also implement adaptive non-maximal suppression. While most feature detectors simply look for local maxima in  the interest function, this can lead to an uneven distribution of feature points across the image, e.g., points will be denser in regions of higher contrast. To mitigate this problem, Brown, Szeliski, and Winder (2005) only detect features that are both local maxima and whose response value is significantly (10%) greater than that of all of its neighbors within a radius r. The goal is to retain only those points that are a maximum in a  neighborhood of radius r pixels. One way to do so is to sort all points by the response strength, from large to small response.  The first entry in the list is the global maximum, which is not  suppressed at any radius. Then, we can iterate through the list and compute the distance to each interest point ahead of it in the list (these are pixels with even greater response strength). The minimum of distances to a keypoint's stronger neighbors (multiplying these neighbors by >=1.1 to add robustness) is the radius within which the current point is a local maximum. We  call this the suppression radius of this interest point, and we save these suppression radii. Finally, we sort the suppression radii from large to small, and return the n keypoints  associated with the top n suppression radii, in this sorted order. Feel free to experiment with n, we used <code>n=1500</code>.
+<br>   
+ <br>                                                                
+You can read more about ANMS in <a href="http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf">the textbook</a>, <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2005/06/cvpr05.pdf">this conference article</a>, or <a href="https://www.cs.ucsb.edu/~holl/pubs/Gauglitz-2011-ICIP.pdf">in this paper which describes a fast variant</a>.
+</p>
+
+<h2>Local feature description (<code>student_sift.py</code>)</h2>
+<p>
+You will implement a SIFT-like local feature as described in the lecture materials and Szeliski 4.1.2.
+See the placeholder <code>get_features()</code> for more details.
+If you want to get your matching pipeline working quickly (and maybe to help debug the other algorithm stages), you might want to start with normalized patches as your local feature.
+</p>
+
+<h2>Feature matching (<code>student_feature_matching.py</code>)</h2>
+<p>
+You will implement the "ratio test" or "nearest neighbor distance ratio test" method of matching local features as described in the lecture materials and Szeliski 4.1.3.
+See equation 4.18 in particular. The potential matches that pass the ratio test the easiest should have a greater tendency to be correct matches -- think about <i>why</i>.</p>
+
+<h2>Using the starter code (<code>proj2.ipynb</code>)</h2>
+<p>
+The top-level <code>proj2.ipynb</code> IPython notebook provided in the starter code includes file handling, visualization, and evaluation functions for you as
+ well as calls to placeholder versions of the three functions listed above. Running the starter code without modification will visualize random
+interest points matched randomly on the particular Notre Dame images shown at the top of this page. The correspondence will be visualized with
+<code>show_correspondence_circles()</code> and <code>show_correspondence_lines()</code> (you can comment one or both out if you prefer).</p>
+
+<p>For the Notre Dame image pair there is a ground truth evaluation in the starter code as well. <code>evaluate_correspondence()</code>
+will classify each match as correct or incorrect based on hand-provided matches (see <code>show_ground_truth_corr()</code> for details).
+The starter code also contains ground truth correspondences for two other image pairs (Mount Rushmore and Episcopal Gaudi). You can
+test on those images by uncommenting the appropriate lines in <code>proj2.ipynb</code>.
+You can create additional ground truth matches with the
+<code>
+CorrespondenceAnnotator().collect_ground_truth_corr()</code> found in <code>annotate_correspondences/collect_ground_truth_corr.py </code>(but it's a tedious process).
+</p>
+<p>
+As you implement your feature matching pipeline, you should see your performance according to <code>evaluate_correspondence.m</code> increase.
+Hopefully you find this useful, but don't <i>overfit</i> to the initial Notre Dame image pair which is relatively easy. The baseline algorithm suggested here
+and in the starter code will give you full credit and work fairly well on these Notre Dame images, but additional image pairs provided in
+<code>extra_data.zip</code> are more difficult. They might exhibit more viewpoint, scale, and illumination variation.
+If you add enough Bells &amp; Whistles you should be able to match more difficult image pairs.</p>
+
+<h2>Suggested implementation strategy</h2>
+<p>
+It is <b> highly suggested </b> that you implement the functions in this order:
+<ul>
+<li>First, use <code>cheat_interest_points()</code> instead of <code>get_interest_points()</code>.
+This function will only work for the 3 image pairs with ground truth correspondence.
+This function cannot be used in your final implementation. It directly loads interest points from the the ground truth correspondences for the test cases.
+Even with this cheating, your accuracy will initially be near zero because the starter code features are all zeros and the starter code matches are random.
+<code>get_interest_points()</code> returns non-integer values, but you'll have to cut patches out at integer coordinates.
+You could address this by rounding the coordinates or doing some form of interpolation. Your own <code>get_features()</code> can also return non-integer coordinates
+(many methods do try to localize interest points to sub-pixel coordinates).</li>
+
+<li> Second, change <code>get_features()</code> to return a simple feature. Start with, for instance, 16x16 patches centered on each interest point.
+Image patches aren't a great feature (they're not invariant to brightness change, contrast change, or small spatial shifts) but this is simple to implement and provides a baseline.
+You won't see your accuracy increase yet because the placeholder code in <code>match_features()</code> is randomly assigning matches.</li>
+
+ <li>Third, implement <code>match_features()</code>.
+Accuracy should increase to ~40% on the Notre Dame pair if you're using 16x16 (256 dimensional) patches as your feature and if you only evaluate your 100 most confident matches.
+Accuracy on the other test cases will be lower (Mount Rushmore 25%, Episcopal Gaudi 7%). If you're sorting your matches by confidence (as the starter code does in <code>match_features()</code>) you
+should notice that your more confident matches (which pass the ratio test more easily) are more likely to be true matches.</li>
+
+<li> Fourth, finish <code>get_features()</code> by implementing a sift-like feature.
+ Accuracy should increase to 70% on the Notre Dame pair, 40% on Mount Rushmore, and 15% on Episcopal Gaudi if you only evaluate your 100 most confident matches.
+These accuracies still aren't great because the human selected keypoints from <code>cheat_interest_points()</code> might not match particularly well according to your feature.
+</li>
+
+<li> Fifth, stop using <code>cheat_interest_points()</code> and implement <code>get_interest_points()</code>.
+Harris corners aren't as good as ground-truth points which we know correspond, so accuracy may drop.
+On the other hand, you can get hundreds or even a few thousand interest points so you have more opportunities to find confident matches.
+If you only evaluate the most confident 100 matches (see the <code>num_pts_to_evaluate
+</code> parameter) on the Notre Dame pair, you should be able to achieve 90% accuracy.
+As long as your accuracy on the Notre Dame image pair is 80% for the 100 most confident matches you can receive full credit for the project. Adaptive non-maximal suppression should help improve your accuracy even more here.</li>
+</ul>
+<p>
+You will likely need to do extra credit to get high accuracy on Mount Rushmore and Episcopal Gaudi.
+<br>
+<p>
+<p>
+<b>Potentially useful NumPy (Python library), OpenCV, and SciPy functions</b>: <code>np.arctan2(), np.sort(), np.reshape(), np.newaxis, np.argsort(), np.gradient(), np.histogram(), np.hypot(), np.fliplr(), np.flipud(), cv2.Sobel(), cv2.filter2D(), cv2.getGaussianKernel(), scipy.signal.convolve()</code>.
+<br>
+<br>
+<b>Forbidden functions</b> (you can use for testing, but not in your final code): <code> cv2.SIFT(), cv2.SURF(),
+cv2.BFMatcher(), cv2.BFMatcher().match(), cv2.FlannBasedMatcher().knnMatch(), cv2.BFMatcher().knnMatch(), cv2.HOGDescriptor(), cv2.cornerHarris(), cv2.FastFeatureDetector(), cv2.ORB(), skimage.feature, skimage.feature.hog(), skimage.feature.daisy, skimage.feature.corner_harris(), skimage.feature.corner_shi_tomasi(), skimage.feature.match_descriptors(), skimage.feature.ORB()</code>.
+<br>
+<br>
+We haven't enumerated all possible forbidden functions here but using anyone else's code that performs interest point detection, feature computation, or feature matching for you is forbidden.
+</p>
+
+<h2>Tips, Tricks, and Common Problems</h2>
+<p>
+<ul>
+<li>Make sure you're not swapping x and y coordinates at some point. If your interest points aren't showing up where you expect or if you're getting out of bound errors you might be
+swapping x and y coordinates. Remember, images expressed as NumPy arrays are accessed <code>image[y,x]</code>.</li>
+<li>Make sure you're features aren't somehow degenerate. You can visualize your features with <code>plt.imshow(image1_features)</code>, although you may need to normalize them first.
+If the features are mostly zero or mostly identical you may have made a mistake.</li>
+</ul>
+</p>
+
+<h2>Writeup</h2>
+<p>
+For this project, and all other projects, you must add a short project report in the notebook(proj2.ipynb) in analysis section. In the writeup you will describe your algorithm and any decisions you made to write your algorithm a particular way. Then you will show and discuss the results of your algorithm.
+</p><p>
+In the case of this project, show how well your matching method works not just on the Notre Dame image pair, but on additional test cases.
+For the 3 image pairs with ground truth correspondence, you can show <code>eval.jpg</code> which the starter code generates. For other image pairs, there is no ground
+truth evaluation (you can make it!) so you can show <code>vis_circles.jpg</code> or <code>vis_lines.jpg</code> instead. A good writeup will assess how
+important various design
+decisions were. E.g. by using SIFT-like features instead of normalized patches, I went from 70% good matches to 90% good matches. This is
+especially important if you did some of the Bells &amp; Whistles and want extra credit. You should clearly demonstrate how your additions
+changed the behavior on particular test cases.
+</p>
+
+<h2>Bells &amp; Whistles</h2>
+<p>
+Implementation of bells and whistles can increase your grade by up to 10 points (potentially over 100). The max score for all students is 110.
+<p>
+For all extra credit, be sure to include quantitative analysis showing the impact of the particular method you've implemented.  Each item is "up to" some amount of points because trivial implementations may not be worthy of full extra credit
+<p>
+Interest point detection bells and whistles:
+<ul>
+  <li>up to 7 pts: Try detecting keypoints at multiple scales or using a scale selection method to pick the best scale.</li>
+  <li>up to 7 pts: Try estimating the orientation of keypoints to make your local features rotation invariant.</li>
+</ul>
+</p>
+
+<p>
+Local feature description bells and whistles:
+<ul>
+  <li>up to 5 pts: The simplest thing to do is to experiment with the numerous SIFT parameters: how big should each feature be? How many local cells should it have? How many orientations should each histogram have? Different normalization schemes can have a significant effect, as well. Don't get lost in parameter tuning, though.</li>
+  <li>up to 7 pts: If your keypoint detector can estimate orientation, your local feature descriptor should be built accordingly so that your pipeline is rotation invariant.</li>
+</ul>
+</p>
+
+<p>
+Local feature matching bells and whistles:
+<br>
+<br>
+An issue with the baseline matching algorithm is the computational expense of computing distance between all pairs of features. For a reasonable implementation of the base pipeline, this is likely to be the slowest part of the code. There are numerous schemes to try and approximate or accelerate feature matching:
+<br>
+<ul>
+  <li>up to 10 pts: Use a space partitioning data structure like a kd-tree or some third party approximate nearest neighbor package to accelerate matching.For this you can use OpenCV Kdtree data structure.</li>
+</ul>
+</p>
+
+<h2> Rubric </h2>
+<ul>
+   <li> +25 pts: Implementation of Harris corner detector in <code>student_harris.py </code></li>
+  <li> +10 pts: Implementation of adaptive non-maximal suppression in <code>student_harris.py </code> </li>
+   <li> +35 pts: Implementation of SIFT-like local feature in <code>student_sift.py</code></li>
+   <li> +10 pts: Implementation of "Ratio Test" matching in <code>student_feature_matching.py</code></li>
+   <li> +20 pts: Writeup with several examples of local feature matching.</li>
+
+   <li> +10 pts: Extra credit (implementation of any bells &amp; whistles up to ten points, max score of 110).</li>
+   <li> -5*n pts: Lose 5 points for every time you do not follow the instructions for the hand in format </li>
+</ul>
+
+
+<h2> Handing in </h2>
+<p>
+This is very important as you will lose points if you do not follow instructions. Every time you do not follow instructions, you will lose 5 points. The folder you hand in must contain the following:
+</p>
+<ul>
+    <li> README - text file providing any special detail and what extra credit you implemented.</li>
+    <li> code/ - directory containing all your code for this assignment</li>
+    <li> pdf/ &#60;LastName&#62;_&#60;FirstName&#62;_proj1.pdf - Convert jupyter notebook to pdf, using download as pdf in the jupyter menu.
+
+</ul>
+<code>python zip_submission.py</code>
+<p>
+Hand in your project as a zip file through <a href="https://gatech.instructure.com/">Canvas</a>.
+</p>
+
+<h2>Credits</h2>
+<p>Assignment developed by James Hays, Samarth Brahmbhatt, and John Lambert. Edited by Zhaoyang Lv and Ankit Arora.  </p>
+
+</div>
+
+
+</body></html>
