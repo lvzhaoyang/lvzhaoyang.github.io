@@ -212,144 +212,140 @@ Great thanks for all of these open source guys.
 
 		<h3 id="publications" , class="page-header "> Projects and Publications </h3>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://www.projectaria.com/datasets/dtc/" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/aria_DTC.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Digital Twin Catalog: A Large-Scale Photorealistic 3D Object Digital
-					Twin Dataset</h4>
-				<h5 class="text-muted "> Zhao Dong, Ka Chen, <strong>Zhaoyang Lv</strong>, Hong-Xing Yu, Yunzhi Zhang, Cheng Zhang,
-					Yufeng Zhu, Stephen Tian, Zhengqin Li, Geordie Moffatt, Sean Christofferson, James Fort, Xiaqing
-					Pan, Mingfei Yan, Jiajun Wu, Carl Yuheng Ren, Richard Newcombe </h5>
-					<h5> Computer Vision and Pattern Recognition (CVPR) 2025, <a href='https://arxiv.org/abs/2504.08541'>
-						arXiv 2504.08541
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-					<h5> <a href="https://www.projectaria.com/datasets/dtc/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true "> </i> </a> </h5>
-			</div>
-		</div>
+		<div id="papers-container"></div>
 
-		<hr class="featurette-divider">
-
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://egolifter.github.io/" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/egolifter.gif">
-				</a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script>
+		<script src="../../dist/js/bootstrap.min.js "></script>
+		<script>
+			function addPaper({
+				image,
+				title,
+				authors,
+				conference,
+				arxivLink,
+				projectLink,
+				videoLink,
+				codeLink
+			}) {
+				const container = document.getElementById("papers-container") || document.body;
+				const highlightedAuthors = authors.replace(/(zhaoyang lv)/gi, '<strong>$1</strong>');
+				const paperHTML = `
+			<div class="row featurette">
+				<div class="col-md-4">
+					<a href="${projectLink}" target="_blank">
+						<img class="img-thumbnail img-responsive" src="${image}">
+					</a>
+				</div>
+				<div class="col-md-8">
+					<h4 class="featurette-heading">${title}</h4>
+					<h5 class="text-muted">${highlightedAuthors}</h5>
+					<h5>${conference}, 
+						<a href="${arxivLink}" target="_blank">
+							arXiv ${arxivLink.split('/').pop()}
+							<i class="ai ai-arxiv fa-1x" style="color:red"></i>
+						</a>
+					</h5>
+					${projectLink ? `<h5><a href="${projectLink}" target="_blank">Project Page <i class="fa fa-home fa-1x" aria-hidden="true"></i></a></h5>` : ""}
+					${videoLink ? `<a href="${videoLink}" target="_blank">Video <i class="fab fa-youtube fa-1x" style="color:red"></i></a>` : ""}
+					${codeLink ? `<h5><a href="${codeLink}" target="_blank">Code <i class="fab fa-github fa-1x" style="color:black" aria-hidden="true"></i></a></h5>` : ""}
+				</div>
 			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> EgoLifter: Open-world 3D Segmentation for Egocentric Perception </h4>
-				<h5 class="text-muted "> Qiao Gu, <strong>Zhaoyang Lv</strong>, Duncan Frost, Simon Green, Julian
-					Straub, Chris Sweeney, </h5>
-				<h5> European Conference on Computer Vision (ECCV) 2024, <a href='https://arxiv.org/abs/2403.18118'>
-						arXiv 2403.18118
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> <a href="https://egolifter.github.io/" target="_blank "> Project Page <i class="fa fa-home fa-1x "
-							aria-hidden="true "> </i> </a> </h5>
-				<a href="https://www.youtube.com/watch?v=hZIjGXIEF-Y" , target="_blank "> Video
-					<i class="fab fa-youtube fa-1x " style="color:red "></i></a>
-				<h5> <a href="https://github.com/facebookresearch/egolifter" target="_blank "> Code
-						<i class="fab fa-github fa-1x" style="color:black" aria-hidden="true "> </i> </a> </h5>
-			</div>
-		</div>
+			<hr class="featurette-divider">	
+		`;
+				container.insertAdjacentHTML("beforeend", paperHTML);
+			}
+		</script>
 
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/aria_DTC.png",
+				"title": "Digital Twin Catalog: A Large-Scale Photorealistic 3D Object Digital Twin Dataset",
+				"authors": "Zhao Dong, Ka Chen, Zhaoyang Lv , Hong-Xing Yu, Yunzhi Zhang, Cheng Zhang, Yufeng Zhu, Stephen Tian, Zhengqin Li, Geordie Moffatt, Sean Christofferson, James Fort, Xiaqing Pan, Mingfei Yan, Jiajun Wu, Carl Yuheng Ren, Richard Newcombe",
+				"conference": "Computer Vision and Pattern Recognition (CVPR) 2025",
+				"arxivLink": "https://arxiv.org/abs/2504.08541",
+				"projectLink": "https://www.projectaria.com/datasets/dtc/",
+				"videoLink": "https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPKXm2WA1d0Josf5jkd6dLcrzJeMhoiqQ7oOZEFtJhODHTMM2CdInf-eqtWX1wgSpAXh0BXzKcJrcgVStZ6Nf6J.mp4?strext=1&_nc_cat=107&_nc_sid=5e9851&_nc_ht=video-sjc3-1.xx.fbcdn.net&_nc_ohc=KDcmuxwpHFwQ7kNvwFk_25l&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTkyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl8xMDgwcCIsInhwdl9hc3NldF9pZCI6NDk3ODM2Njc2NDYzNDM3LCJ2aV91c2VjYXNlX2lkIjoxMDgyMSwiZHVyYXRpb25fcyI6OTQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=39e006fca76065e4&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRnhiYlJ3eVBYR2xnekFDQURiRWJYdDBWNHN0YnY0R0FBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dITTBmUnR6UUUtcVNna0RBRGo0UGlVSlhiUWpidjRHQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJprtjaT0seIBFQIoAkMzLBdAV7EGJN0vGxgaZGFzaF9oMjY0LWJhc2ljLWdlbjJfMTA4MHARAHUCAA&_nc_zt=28&oh=00_AfHJHoASXjGT3QW15q0M3wOQGHKcnW2sP-8PEaASIzna_Q&oe=6803C393",
+				"codeLink": ""
+			});
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://showlab.github.io/videollm-online/" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/video-llm.gif">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> VideoLLM-online: Online Large Language Model for Streaming Video </h4>
-				<h5 class="text-muted "> Joya Chen, <strong>Zhaoyang Lv</strong>, Shiwei Wu, Kevin Qinghong Lin, Chenan
-					Song, Difei Gao, Jia-Wei Liu, Ziteng Gao, Dongxing Mao, Mike Zheng Shou </h5>
-				<h5> Computer Vision and Pattern Recognition (CVPR) 2024, <a href='https://arxiv.org/abs/2406.11816'>
-						arXiv 2406.11816
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> <a href="https://showlab.github.io/videollm-online/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-				<a href="https://github.com/showlab/VideoLLM-online" target="_blank"> Code
-					<i class="fab fa-github fa-1x" style="color:black "></i> </a>
-			</div>
-		</div>
+		<!-- <script>
+			addPaper({
+				"image": "",
+				"title": "Large Inverse Rendering Model for Reconstruction of Shape, Materials and Realistic Radiance Field",
+				"authors": "Zhengqin Li, Dilin Wang, Ka chen, Zhaoyang Lv , Thu Nguyen-Phuoc, Milim Lee, Jia-Bin Huang, Lei Xiao, Yufeng Zhu, Carl Marshall, Carl Ren, Richard Newcombe, Zhao Dong",
+				"conference": "",
+				"arxivLink": "",
+				"projectLink": "",
+				"videoLink": "",
+				"codeLink": ""
+			});
+		</script> -->
 
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/egolifter.gif",
+				"title": "EgoLifter: Open-world 3D Segmentation for Egocentric Perception",
+				"authors": "Qiao Gu, Zhaoyang Lv , Duncan Frost, Simon Green, Julian Straub, Chris Sweeney,",
+				"conference": "European Conference on Computer Vision (ECCV) 2024",
+				"arxivLink": "https://arxiv.org/abs/2403.18118",
+				"projectLink": "https://egolifter.github.io/",
+				"videoLink": "https://www.youtube.com/watch?v=hZIjGXIEF-Y",
+				"codeLink": "https://github.com/facebookresearch/egolifter"
+			});
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://about.facebook.com/realitylabs/projectaria/datasets" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/lave.gif">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> LAVE: LLM-Powered Agent Assistance and Language Augmentation for Video
-					Editing </h4>
-				<h5 class="text-muted "> Bryan Wang, Yuliang Li, <strong>Zhaoyang Lv</strong>, Haijun Xia, Yan Xu, Raj
-					Sodhi </h5>
-				<h5> ACM IUI 2024, <a href='https://arxiv.org/pdf/2402.10294.pdf'> arXiv 2402.10294
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> <a href="https://www.dgp.toronto.edu/~bryanw/lave/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true "> </i> </a> </h5>
-				<a href="https://www.youtube.com/watch?v=t3jAqp0D3FI&ab_channel=BryanWang" , target="_blank "> Video
-					<i class="fab fa-youtube fa-1x " style="color:red "></i></a>
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/video-llm.gif",
+				"title": "VideoLLM-online: Online Large Language Model for Streaming Video",
+				"authors": "Joya Chen, Zhaoyang Lv , Shiwei Wu, Kevin Qinghong Lin, Chenan Song, Difei Gao, Jia-Wei Liu, Ziteng Gao, Dongxing Mao, Mike Zheng Shou",
+				"conference": "Computer Vision and Pattern Recognition (CVPR) 2024",
+				"arxivLink": "https://arxiv.org/abs/2406.11816",
+				"projectLink": "https://showlab.github.io/videollm-online/",
+				"videoLink": "",
+				"codeLink": "https://github.com/showlab/VideoLLM-online"
+			});
+		</script>
 
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/lave.gif",
+				"title": "LAVE: LLM-Powered Agent Assistance and Language Augmentation for Video Editing",
+				"authors": "Bryan Wang, Yuliang Li, Zhaoyang Lv , Haijun Xia, Yan Xu, Raj Sodhi",
+				"conference": "ACM IUI 2024",
+				"arxivLink": "https://arxiv.org/pdf/2402.10294.pdf",
+				"projectLink": "https://www.dgp.toronto.edu/~bryanw/lave/",
+				"videoLink": "https://www.youtube.com/watch?v=t3jAqp0D3FI&ab_channel=BryanWang",
+				"codeLink": ""
+			});
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://about.facebook.com/realitylabs/projectaria/datasets" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/aea.gif">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Aria Everyday Activities Dataset </h4>
-				<h5 class="text-muted "> <strong>Zhaoyang Lv</strong>, Nicholas Charron, Pierre Moulon, Alexander
-					Gamino, Cheng Peng, Chris Sweeney, Edward Miller, Huixuan Tang, Jeff Meissner, Jing Dong, Kiran
-					Somasundaram, Luis Pesqueira, Mark Schwesinger, Omkar Parkhi, Qiao Gu, Renzo De Nardi, Shangyi
-					Cheng, Steve Saarinen, Vijay Baiyya, Yuyang Zou, Richard Newcombe, Jakob Julian Engel, Xiaqing Pan,
-					Carl Ren </h5>
-				<h5> <a href="https://www.projectaria.com/datasets/aea/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true "> </i> </a> </h5>
-				<h5> <a href='https://arxiv.org/abs/2402.13349'> Technical Report <i class="ai ai-arxiv fa-1x "
-							style="color:red "></i> </a></h5>
-				<h5> <a href="https://github.com/facebookresearch/projectaria_tools" target="_blank"> Project Aria Tools
-						<i class="fab fa-github fa-1x" style="color:black "></i> </a> </h5>
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/aea.gif",
+				"title": "Aria Everyday Activities Dataset",
+				"authors": "Zhaoyang Lv , Nicholas Charron, Pierre Moulon, Alexander Gamino, Cheng Peng, Chris Sweeney, Edward Miller, Huixuan Tang, Jeff Meissner, Jing Dong, Kiran Somasundaram, Luis Pesqueira, Mark Schwesinger, Omkar Parkhi, Qiao Gu, Renzo De Nardi, Shangyi Cheng, Steve Saarinen, Vijay Baiyya, Yuyang Zou, Richard Newcombe, Jakob Julian Engel, Xiaqing Pan, Carl Ren",
+				"conference": "Technical Report",
+				"arxivLink": "https://arxiv.org/abs/2402.13349",
+				"projectLink": "https://www.projectaria.com/datasets/aea/",
+				"videoLink": "",
+				"codeLink": "https://github.com/facebookresearch/projectaria_tools"
+			});
+		</script>
 
-		<hr class="featurette-divider">
-
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://about.facebook.com/realitylabs/projectaria/datasets" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/adanerf.svg">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> AdaNeRF: Adaptive Sampling for Real-time Rendering of Neural Radiance
-					Fields </h4>
-				<h5 class="text-muted "> Andreas Kurz, Thomas Neff, <strong>Zhaoyang Lv</strong>, Michael Zollhöfer,
-					Markus Steinberger</h5>
-				<h5> European Conference on Computer Vision (ECCV) 2022, <a href='https://arxiv.org/abs/2207.10312'>
-						arXiv 2207.10312
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> <a href="https://thomasneff.github.io/adanerf/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-				<a href="https://github.com/thomasneff/AdaNeRF" target="_blank"> Code
-					<i class="fab fa-github fa-1x" style="color:black "></i> </a>
-			</div>
-		</div>
-
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/adanerf.svg",
+				"title": "AdaNeRF: Adaptive Sampling for Real-time Rendering of Neural Radiance Fields",
+				"authors": "Andreas Kurz, Thomas Neff, Zhaoyang Lv , Michael Zollh\u00f6fer,Markus Steinberger",
+				"conference": "European Conference on Computer Vision (ECCV) 2022",
+				"arxivLink": "https://arxiv.org/abs/2207.10312",
+				"projectLink": "https://thomasneff.github.io/adanerf/",
+				"videoLink": "",
+				"codeLink": "https://github.com/thomasneff/AdaNeR"
+			});
+		</script>
 
 		<div class="row featurette ">
 			<div class="col-md-4 ">
@@ -406,6 +402,19 @@ Great thanks for all of these open source guys.
 		</div>
 
 		<hr class="featurette-divider">
+
+		<!-- <script>
+			addPaper({
+				"image": "images/star.png",
+				"title": "STaR: Self-supervised Tracking and Reconstruction of Rigid Objects in Motion with Neural Rendering",
+				"authors": "Wentao Yuan, Zhaoyang Lv , Tanner Schmidt, Steven Lovegrove",
+				"conference": "Computer Vision and Pattern Recognition (CVPR) 2021",
+				"arxivLink": "https://arxiv.org/abs/2101.01602",
+				"projectLink": "https://wentaoyuan.github.io/star/",
+				"videoLink": "",
+				"codeLink": ""
+			});
+		</script> -->
 
 		<div class="row featurette ">
 			<div class="col-md-4 ">
