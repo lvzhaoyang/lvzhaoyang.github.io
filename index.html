@@ -1,220 +1,170 @@
 <!--
 
-The website is built upon Bootstrap3, Font-awesome2.
+The website is built upon Bootstrap 5, Font Awesome 6.
 Great thanks for all of these open source guys.
 
 -->
-
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Zhaoyang Lv | Personal Website">
+	<meta name="description" content="Zhaoyang Lv | Research Scientist at Meta Reality Labs Research">
 	<meta name="author" content="Zhaoyang Lv">
-	<meta name="keywords" content="Zhaoyang Lv, gatech, robotics, computer vision" ">
-	<link rel=" shortcut icon " href=" images/favicon.ico ">
+	<meta name="keywords" content="Zhaoyang Lv, Meta, Reality Labs, robotics, computer vision, 3D reconstruction, AR/VR">
+	<link rel="icon" href="images/favicon.ico">
 
 	<title>Zhaoyang Lv</title>
 
-	<!--Use boostrap jquery component-->
-	<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
-	<script src=" http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js "></script>
-
-	<!-- include bootstrap core CSS -->
-	<link href=" 3rdparty/dist/css/bootstrap.min.css " rel=" stylesheet ">
-	<!--link rel=" stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<!-- include css -->
-	<link href=" zhaoyang_css/zhaoyang_theme.css " rel=" stylesheet
-	 ">
-
-	<!-- include font-awesom.min-css -->
-	<link rel=" stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="3rdparty/academicons-1.8.6/css/academicons.css"> -->
+	<!-- Bootstrap 5 CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	
+	<!-- Font Awesome 6 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	
+	<!-- Academicons -->
 	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
-	<!-- include MathJax-->
-	<script type="text/javascript " async
-		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML ">
- </script>
+	<!-- MathJax -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-	<!-- include Code highlight-->
-	<link rel="stylesheet " href="//cdn.jsdelivr.net/highlight.js/9.6.0/styles/default.min.css ">
-	<script src="//cdn.jsdelivr.net/highlight.js/9.6.0/highlight.min.js "></script>
+	<!-- Code highlighting -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-	<!--Use google +1 button-->
-	<script src="https://apis.google.com/js/platform.js " async defer></script>
+	<!-- Custom CSS -->
+	<link href="zhaoyang_css/zhaoyang_theme.css" rel="stylesheet">
 
-	<!-- Just for debugging purposes. Don't actually copy this line! -->
-	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js "></script><![endif]-->
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js "></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js "></script>
-		<![endif]-->
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135631836-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-
 		gtag('config', 'UA-135631836-1');
 	</script>
-
 </head>
 
 <body>
-	<!-- This is for the navigation bar for all files. -->
-	<div class="navbar navbar-default navbar-fixed-top " id="top " role="navigation ">
-		<div class="container ">
-			<div class="navbar-header ">
-				<button type="button " class="navbar-toggle " data-toggle="collapse " data-target=".navbar-collapse ">
-					<span class="sr-only ">Toggle navigation</span>
-					<span class="icon-bar "> </span>
-					<span class="icon-bar "> </span>
-					<span class="icon-bar "> </span>
-				</button>
-				<a class="navbar-brand " href="# ">ZHAOYANG</a>
-			</div>
-
-			<nav class="navbar-collapse collapse " role="navigation ">
-				<ul class="nav navbar-nav ">
-					<li class="active ">
-						<a href="# ">HOME</a>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="top">
+		<div class="container">
+			<a class="navbar-brand fw-bold" href="#">ZHAOYANG</a>
+			
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">HOME</a>
 					</li>
-					<li>
-						<a href="cv/cv.pdf " , target="_blank ">CV</a>
+					<li class="nav-item">
+						<a class="nav-link" href="cv/cv.pdf" target="_blank">CV</a>
 					</li>
 				</ul>
-			</nav>
+			</div>
 		</div>
-	</div>
-	<!-- end of navigation bar. -->
+	</nav>
 
-	<div class="container ">
+	<div class="container mt-4">
 
-		<div class="container theme-showcase " role="main ">
-			<div class="jumbotron ">
-				<div class="row ">
+		<div class="container theme-showcase" role="main">
+			<div class="bg-light p-5 rounded-3 mb-4">
+				<div class="row">
 
-					<div class="col-md-3 ">
+					<div class="col-md-3">
 						<!-- Profile Image-->
-						<img class="img-thumbnail img-responsive " src="images/head.png" alt="Head Image ">
+						<img class="img-fluid rounded" src="images/head.png" alt="Zhaoyang Lv Profile Image">
 					</div>
 
-					<div class="col-md-9 ">
+					<div class="col-md-9">
 						<!-- General Introduction-->
-						<h2>
-							Zhaoyang Lv &nbsp
-							<!-- <a href="cv/cv.pdf " , target="_blank "> <i class="far fa-file-pdf fa-1x " style="color:red "></i> </a> -->
+						<h2 class="mb-3">
+							Zhaoyang Lv
 						</h2>
-						<p style="font-size:16px ">
-							<br>
-							Research Scientist,
-							<a href="https://tech.fb.com/ar-vr/" , target='_blank'> Reality Labs Research, Meta.</a>
-							<br>
+						<p class="fs-5 mb-3">
+							Research Scientist,<br>
+							<a href="https://tech.fb.com/ar-vr/" target="_blank" class="text-decoration-none">Reality Labs Research, Meta</a>
 						</p>
 
-						<br>
-
-						<p class="text-muted " style="font-size:14px; ">
-							Previous Education:
-							<br>
-							Ph.D. in Robotics, School of Interactive Computing, Georgia Institute of Technology
-							<br>
-							M.Sc., Artificial Intelligence in Computing, Imperial College London
-							<br>
-							B.Sc., Electrical Engineering in Aeronauntics, Northwestern Polytechnical University</h5>
-							<br>
+						<p class="text-muted fs-6">
+							<strong>Previous Education:</strong><br>
+							Ph.D. in Robotics, School of Interactive Computing, Georgia Institute of Technology<br>
+							M.Sc., Artificial Intelligence in Computing, Imperial College London<br>
+							B.Sc., Electrical Engineering in Aeronautics, Northwestern Polytechnical University
 						</p>
 
 					</div>
 				</div>
 
-				</br>
-
-				<div class="row ">
-					<div class="col-md-3 ">
-						<p class=" text-center ">
-							<a href='https://scholar.google.com/citations?user=fSb94nAAAAAJ&hl=en' , target='_blank '>
-								<i class="ai ai-google-scholar-square ai-1x aria-hidden=" true" " style=" color:#4885ED "></i></a>
-	
-							<a href = 'https://github.com/lvzhaoyang', target='_blank '>
-								<i class=" fab fa-github-square fa-1x aria-hidden="true" " style=" color:rgb(0,0,0)"></i></a>
-
-							<a href="https://www.linkedin.com/in/zhaoyang-lv-63b27151?trk=nav_responsive_tab_profile_pic "
-								, target=" _blank">
-								<i class=" fab fa-linkedin fa-1x aria-hidden=" true" " style=" color:rgb(0,123,182)">
-								</i> </a>
-
-							<a href="https://twitter.com/LvZhaoyang" , target=" _blank ">
-								<i class=" fab fa-twitter-square fa-1x aria-hidden=" true" " style="
-									color:rgb(42,163,239) "> </i> </a>
-		
-							<a href = " https://www.facebook.com/zhaoyang.lv.9 ", target = " _blank ">
-								<i class=" fab fa-facebook-square fa-1x aria-hidden="true" " style=" color:rgb(28,139,236) "> </i> </a>
-			
-							<a href = " https://www.instagram.com/zhaoyang.lv", target="_blank ">
-									<i class="fab fa-instagram fa-1x " style="color:rgb(251, 57, 88) "> </i> </a>
-						</p>
+				<div class="row mt-4">
+					<div class="col-md-3">
+						<div class="d-flex justify-content-center gap-3">
+							<a href="https://scholar.google.com/citations?user=fSb94nAAAAAJ&hl=en" target="_blank" class="text-decoration-none">
+								<i class="ai ai-google-scholar-square fa-2x" style="color:#4885ED"></i>
+							</a>
+							<a href="https://github.com/lvzhaoyang" target="_blank" class="text-decoration-none">
+								<i class="fab fa-github-square fa-2x" style="color:rgb(0,0,0)"></i>
+							</a>
+							<a href="https://www.linkedin.com/in/zhaoyang-lv-63b27151" target="_blank" class="text-decoration-none">
+								<i class="fab fa-linkedin fa-2x" style="color:rgb(0,123,182)"></i>
+							</a>
+							<a href="https://twitter.com/LvZhaoyang" target="_blank" class="text-decoration-none">
+								<i class="fab fa-twitter-square fa-2x" style="color:rgb(42,163,239)"></i>
+							</a>
+						</div>
 					</div>
-					<div class="col-md-9 ">
+					<div class="col-md-9">
 						<!-- Personal Information -->
-						I have been a research scientist in Reality Labs Research, Meta since 2019. I finished my Ph.D.
-						at Georgia Tech, jointly advised by <a href="http://rehg.org/" , target="_blank "> Prof. James
-							Rehg</a>, and
-						<a href="http://www.cc.gatech.edu/~dellaert/FrankDellaert/Frank_Dellaert/Frank_Dellaert.html " ,
-							target="_blank">
-							Prof. Frank Dellaert</a>. During my Ph.D., I am also fortunate to intern at Nvidia Research
-						in the group of <a href="http://jankautz.com/">
-							Jan Kautz </a> and at Max Planck Institute with <a href="https://ps.is.tue.mpg.de/~ageiger">
-							Prof. Andreas Geiger</a>. Before I started my Ph.D., I finished my Master thesis under the
-						supervision
-						of <a href="https://www.doc.ic.ac.uk/~ajd/ " , target="_blank "> Prof. Andrew Davison</a> at
-						Imperial College
-						London.
-						<br>
-						<br>
-						Thoughout my research, I am obessed about digitalizing the world in 3D and 4D as we human are
-						able to see using commodity camera sensing.
-						I am a believer that augmented reality with 3D sensing and content that can work on a small form
-						factor devices (e.g. a pair of glasses) will become ubiquitous and
-						fundamentally change the way we interact with world and record our memories.
-						Quote <a href="https://youtu.be/J33pVRdxWbw?t=445"> Steve Jobs' comments on GUI when he visited
-							Xerox PARC in 1979 </a>:
-						<br>
-						<q>Within 10 minutes, it was obvious to me that all computers would work like this someday.
-							You could argue about how many number of years it would take,
-							and you could argue about who the winners and the losers might be,
-							but you couldn't argue about the inevitability.
-						</q>
-						<br>
-						<br>
-						I work on multidisciplinary field research and make my contributions towards it. I love 3D
-						computer vision, with some work strongly related to techniques using computational
-						photography, graphics, machine learning and robotics.
-						<br>
-						<!-- <br> -->
+						<p class="mb-3">
+							I have been a research scientist in Reality Labs Research, Meta since 2019. I finished my Ph.D.
+							at Georgia Tech, jointly advised by <a href="http://rehg.org/" target="_blank" class="text-decoration-none">Prof. James Rehg</a>, and
+							<a href="http://www.cc.gatech.edu/~dellaert/FrankDellaert/Frank_Dellaert/Frank_Dellaert.html" target="_blank" class="text-decoration-none">
+								Prof. Frank Dellaert</a>. During my Ph.D., I am also fortunate to intern at Nvidia Research
+							in the group of <a href="http://jankautz.com/" class="text-decoration-none">Jan Kautz</a> and at Max Planck Institute with <a href="https://ps.is.tue.mpg.de/~ageiger" class="text-decoration-none">
+								Prof. Andreas Geiger</a>. Before I started my Ph.D., I finished my Master thesis under the
+							supervision of <a href="https://www.doc.ic.ac.uk/~ajd/" target="_blank" class="text-decoration-none">Prof. Andrew Davison</a> at
+							Imperial College London.
+						</p>
+						
+						<p class="mb-3">
+							Throughout my research, I am obsessed about digitalizing the world in 3D and 4D as we humans are
+							able to see using commodity camera sensing. I am a believer that augmented reality with 3D sensing and content that can work on a small form
+							factor devices (e.g. a pair of glasses) will become ubiquitous and
+							fundamentally change the way we interact with world and record our memories.
+						</p>
+						
+						<p class="mb-3">
+							Quote <a href="https://youtu.be/J33pVRdxWbw?t=445" class="text-decoration-none">Steve Jobs' comments on GUI when he visited Xerox PARC in 1979</a>:
+						</p>
+						
+						<blockquote class="blockquote border-start border-3 ps-3 mb-3">
+							<p class="mb-0 fs-6">Within 10 minutes, it was obvious to me that all computers would work like this someday.
+								You could argue about how many number of years it would take,
+								and you could argue about who the winners and the losers might be,
+								but you couldn't argue about the inevitability.</p>
+						</blockquote>
+						
+						<p>
+							I work on multidisciplinary field research and make my contributions towards it. I love 3D
+							computer vision, with some work strongly related to techniques using computational
+							photography, graphics, machine learning and robotics.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<h3 id="publications" , class="page-header "> Projects and Publications </h3>
+		<h3 id="publications" class="page-header mt-5 mb-4">Projects and Publications</h3>
 
 		<div id="papers-container"></div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script>
-		<script src="../../dist/js/bootstrap.min.js "></script>
 		<script>
 			function addPaper({
 				image,
@@ -224,32 +174,42 @@ Great thanks for all of these open source guys.
 				arxivLink,
 				projectLink,
 				videoLink,
-				codeLink
+				codeLink,
+				codeLabel = "Code",
+				arxivLabel = null,
+				awards = null
 			}) {
 				const container = document.getElementById("papers-container") || document.body;
 				const highlightedAuthors = authors.replace(/(zhaoyang lv)/gi, '<strong>$1</strong>');
+				
+				// Handle arxiv label
+				let arxivText = arxivLabel || `arXiv ${arxivLink.split('/').pop()}`;
+				
 				const paperHTML = `
-			<div class="row featurette">
+			<div class="row mb-4">
 				<div class="col-md-4">
-					<a href="${projectLink}" target="_blank">
-						<img class="img-thumbnail img-responsive" src="${image}">
+					<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
+						<img class="img-fluid rounded" src="${image}" alt="${title}">
 					</a>
 				</div>
 				<div class="col-md-8">
-					<h4 class="featurette-heading">${title}</h4>
-					<h5 class="text-muted">${highlightedAuthors}</h5>
-					<h5>${conference}, 
-						<a href="${arxivLink}" target="_blank">
-							arXiv ${arxivLink.split('/').pop()}
-							<i class="ai ai-arxiv fa-1x" style="color:red"></i>
+					<h4 class="fw-bold mb-2">${title}</h4>
+					<p class="text-muted mb-2">${highlightedAuthors}</p>
+					<p class="mb-2">${conference}, 
+						<a href="${arxivLink}" target="_blank" class="text-decoration-none">
+							${arxivText}
+							<i class="ai ai-arxiv" style="color:red"></i>
 						</a>
-					</h5>
-					${projectLink ? `<h5><a href="${projectLink}" target="_blank">Project Page <i class="fa fa-home fa-1x" aria-hidden="true"></i></a></h5>` : ""}
-					${videoLink ? `<a href="${videoLink}" target="_blank">Video <i class="fab fa-youtube fa-1x" style="color:red"></i></a>` : ""}
-					${codeLink ? `<h5><a href="${codeLink}" target="_blank">Code <i class="fab fa-github fa-1x" style="color:black" aria-hidden="true"></i></a></h5>` : ""}
+					</p>
+					${awards ? `<p class="mb-2"><span class="badge bg-warning text-dark">🏆 ${awards}</span></p>` : ""}
+					<div class="d-flex gap-3 flex-wrap">
+						${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Page <i class="fas fa-home"></i></a>` : ""}
+						${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
+						${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">${codeLabel} <i class="fab fa-github"></i></a>` : ""}
+					</div>
 				</div>
 			</div>
-			<hr class="featurette-divider">	
+			<hr class="my-4">	
 		`;
 				container.insertAdjacentHTML("beforeend", paperHTML);
 			}
@@ -325,7 +285,8 @@ Great thanks for all of these open source guys.
 				"arxivLink": "https://arxiv.org/abs/2504.08541",
 				"projectLink": "https://www.projectaria.com/datasets/dtc/",
 				"videoLink": "https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPKXm2WA1d0Josf5jkd6dLcrzJeMhoiqQ7oOZEFtJhODHTMM2CdInf-eqtWX1wgSpAXh0BXzKcJrcgVStZ6Nf6J.mp4?strext=1&_nc_cat=107&_nc_sid=5e9851&_nc_ht=video-sjc3-1.xx.fbcdn.net&_nc_ohc=KDcmuxwpHFwQ7kNvwFk_25l&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMTkyMC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl8xMDgwcCIsInhwdl9hc3NldF9pZCI6NDk3ODM2Njc2NDYzNDM3LCJ2aV91c2VjYXNlX2lkIjoxMDgyMSwiZHVyYXRpb25fcyI6OTQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=39e006fca76065e4&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HRnhiYlJ3eVBYR2xnekFDQURiRWJYdDBWNHN0YnY0R0FBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dITTBmUnR6UUUtcVNna0RBRGo0UGlVSlhiUWpidjRHQUFBRhUCAsgBACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJprtjaT0seIBFQIoAkMzLBdAV7EGJN0vGxgaZGFzaF9oMjY0LWJhc2ljLWdlbjJfMTA4MHARAHUCAA&_nc_zt=28&oh=00_AfHJHoASXjGT3QW15q0M3wOQGHKcnW2sP-8PEaASIzna_Q&oe=6803C393",
-				"codeLink": ""
+				"codeLink": "",
+				"awards": "CVPR Highlight"
 			});
 		</script>
 
@@ -407,522 +368,335 @@ Great thanks for all of these open source guys.
 			});
 		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://about.facebook.com/realitylabs/projectaria/datasets" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/aria_pilot_dataset.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> 1st Project Aria Tutorial & Aria Pilot Dataset & Aria Data Tools </h4>
-				<h5 class="text-muted "> Project lead for <a href="https://ariatutorial2022.github.io/" target="_blank">
-						Project Aria Tutorial Program Team </a>;
-					<a href="https://facebookresearch.github.io/Aria_data_tools/docs/citation-contribute/#aria-pilot-dataset"
-						target="_blank"> Aria Pilot Dataset</a>;
-					<a href="https://facebookresearch.github.io/Aria_data_tools/docs/citation-contribute/#aria-data-tools"
-						target="_blank"> Aria Data Tool Team</a>
-				</h5>
-				<h5> Computer Vision and Pattern Recognition (CVPR) 2022 Tutorial Program </h5>
-				<h5> <a href="https://ariatutorial2022.github.io/" target="_blank "> CVPR 2022 Tutorial Program Page <i
-							class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-				<h5> <a href="https://about.facebook.com/realitylabs/projectaria/datasets" target="_blank "> Aria Pilot
-						Dataset <i class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-				<h5> <a href="https://github.com/facebookresearch/Aria_data_tools" target="_blank"> Aria Data Tools
-						<i class="fab fa-github fa-1x" style="color:black "></i> </a> </h5>
-				<h5> <a href='https://arxiv.org/abs/2308.13561'> Project Aria Paper <i class="ai ai-arxiv fa-1x "
-							style="color:red "></i> </a></h5>
-			</div>
-		</div>
 
-		<hr class="featurette-divider">
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://neural-3d-video.github.io/" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/n3d_martini.gif">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Neural 3D Video Synthesis from Multi-view Video </h4>
-				<h5 class="text-muted "> Tianye Li, Mira Slavcheva, Michael Zollhoefer, Simon Green, Christoph Lassner,
-					Changil Kim, Tanner Schmidt, Steven Lovegrove, Michael Goesele, Richard Newcombe, <strong>Zhaoyang
-						Lv</strong> </h5>
-				<h5> Computer Vision and Pattern Recognition (CVPR) 2022, <a href='https://arxiv.org/abs/2103.02597'>
-						arXiv 2103.02597
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> Oral Presentation </h5>
-				<h5> <a href="https://neural-3d-video.github.io/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-				<a href="https://github.com/facebookresearch/Neural_3D_Video" target="_blank"> Dataset
-					<i class="fab fa-github fa-1x" style="color:black "></i> </a>
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/n3d_martini.gif",
+				"title": "Neural 3D Video Synthesis from Multi-view Video",
+				"authors": "Tianye Li, Mira Slavcheva, Michael Zollhoefer, Simon Green, Christoph Lassner, Changil Kim, Tanner Schmidt, Steven Lovegrove, Michael Goesele, Richard Newcombe, Zhaoyang Lv",
+				"conference": "Computer Vision and Pattern Recognition (CVPR) 2022",
+				"arxivLink": "https://arxiv.org/abs/2103.02597",
+				"projectLink": "https://neural-3d-video.github.io/",
+				"videoLink": "",
+				"codeLink": "https://github.com/facebookresearch/Neural_3D_Video",
+				"codeLabel": "Dataset",
+				"awards": "CVPR Oral Presentation"
+			});
+		</script>
 
-		<hr class="featurette-divider">
-
-		<!-- <script>
+		<script>
 			addPaper({
 				"image": "images/star.png",
 				"title": "STaR: Self-supervised Tracking and Reconstruction of Rigid Objects in Motion with Neural Rendering",
-				"authors": "Wentao Yuan, Zhaoyang Lv , Tanner Schmidt, Steven Lovegrove",
+				"authors": "Wentao Yuan, Zhaoyang Lv, Tanner Schmidt, Steven Lovegrove",
 				"conference": "Computer Vision and Pattern Recognition (CVPR) 2021",
 				"arxivLink": "https://arxiv.org/abs/2101.01602",
 				"projectLink": "https://wentaoyuan.github.io/star/",
 				"videoLink": "",
 				"codeLink": ""
 			});
-		</script> -->
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://wentaoyuan.github.io/star/" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/star.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> STaR: Self-supervised Tracking and Reconstruction of Rigid Objects in
-					Motion with Neural Rendering </h4>
-				<h5 class="text-muted "> Wentao Yuan, <strong>Zhaoyang Lv</strong>, Tanner Schmidt, Steven Lovegrove
-				</h5>
-				<h5> Computer Vision and Pattern Recognition (CVPR) 2021, <a href='https://arxiv.org/abs/2101.01602'>
-						arXiv 2101.01602
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a></h5>
-				<h5> <a href="https://wentaoyuan.github.io/star/" target="_blank "> Project Page <i
-							class="fa fa-home fa-1x " aria-hidden="true ">
-						</i> </a> </h5>
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/iccv19figs/overview.png",
+				"title": "SENSE: A Shared Encoder Network for Scene-flow Estimation",
+				"authors": "Huaizu Jiang, Deqing Sun, Varun Jampani, Zhaoyang Lv, Erik Learned-Miller, Jan Kautz",
+				"conference": "International Conference in Computer Vision (ICCV) 2019",
+				"arxivLink": "https://arxiv.org/abs/1905.01300",
+				"projectLink": "",
+				"videoLink": "",
+				"codeLink": "https://github.com/NVlabs/SENSE",
+				"awards": "ICCV Oral Presentation"
+			});
+		</script>
 
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/cvpr19.png",
+				"title": "Taking a Deeper Look at the Inverse Compositional Algorithm",
+				"authors": "Zhaoyang Lv, Frank Dellaert, James M. Rehg, Andreas Geiger",
+				"conference": "Computer Vision and Pattern Recognition (CVPR) 2019",
+				"arxivLink": "https://arxiv.org/abs/1812.06861",
+				"projectLink": "",
+				"videoLink": "https://youtu.be/doTjXDFtyK0",
+				"codeLink": "https://github.com/lvzhaoyang/DeeperInverseCompositionalAlgorithm",
+				"awards": "CVPR Oral Presentation, Best Paper Finalist"
+			});
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://github.com/NVlabs/SENSE" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/iccv19figs/overview.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> SENSE: A Shared Encoder Network for Scene-flow Estimation</h4>
-				<h5 class="text-muted "> Huaizu Jiang, Deqing Sun, Varun Jampani, <strong>Zhaoyang Lv</strong>, Erik
-					Learned-Miller, Jan Kautz</h5>
-				<h5> <a
-						href='http://openaccess.thecvf.com/content_ICCV_2019/papers/Jiang_SENSE_A_Shared_Encoder_Network_for_Scene-Flow_Estimation_ICCV_2019_paper.pdf'>
-						International Conference in Computer Vision (ICCV) 2019 </a>,
-					<a
-						href='http://openaccess.thecvf.com/content_ICCV_2019/supplemental/Jiang_SENSE_A_Shared_ICCV_2019_supplemental.pdf'>
-						Supplementary Materials</a>
-				</h5>
-				<h5> Oral Presentation</h5>
-				<a href="https://github.com/NVlabs/SENSE" target="_blank"> Code
-					<i class="fab fa-github fa-1x" style="color:black "></i> </a>
-				<!-- <a href='#', target="_blank">
-					Poster <i class="far fa-file fa-1x " style="color:red "> </i> </a> -->
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/iclr19_overview.png",
+				"title": "Multi-class Classification without Multi-class Labels",
+				"authors": "Yen-Chang Hsu, Zhaoyang Lv, Joel Schlosser, Phillip Odom, Zsolt Kira",
+				"conference": "International Conference on Learning Representations (ICLR) 2019",
+				"arxivLink": "https://openreview.net/forum?id=SJzR2iRcK7",
+				"projectLink": "",
+				"videoLink": "",
+				"codeLink": "https://github.com/GT-RIPL/L2C",
+				"arxivLabel": "openreview"
+			});
+		</script>
 
-		<hr class="featurette-divider">
+		<script>
+			addPaper({
+				"image": "images/cvpr17figs/visualization.png",
+				"title": "Learning to Cluster in Order to Transfer across Domains and Tasks",
+				"authors": "Yen-Chang Hsu, Zhaoyang Lv, Zsolt Kira",
+				"conference": "International Conference on Learning Representations (ICLR) 2018",
+				"arxivLink": "https://arxiv.org/abs/1711.10125",
+				"projectLink": "",
+				"videoLink": "",
+				"codeLink": "https://github.com/GT-RIPL/L2C"
+			});
+		</script>
 
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://youtu.be/doTjXDFtyK0" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/cvpr19.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Taking a Deeper Look at the Inverse Compositional Algorithm </h4>
-				<h5 class="text-muted "> <strong>Zhaoyang Lv</strong>, Frank Dellaert, James M. Rehg, Andreas Geiger
-				</h5>
-				<h5> <a
-						href='http://openaccess.thecvf.com/content_CVPR_2019/papers/Lv_Taking_a_Deeper_Look_at_the_Inverse_Compositional_Algorithm_CVPR_2019_paper.pdf'>
-						Computer Vision and Pattern Recognition (CVPR) 2019</a>,
-					<a
-						href='http://openaccess.thecvf.com/content_CVPR_2019/supplemental/Lv_Taking_a_Deeper_CVPR_2019_supplemental.pdf'>
-						Supplementary Materials</a>,
-					<a href='https://arxiv.org/pdf/1812.06861.pdf'> arXiv 1812.06861
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a>
-				</h5>
-				<h5> Oral Presentation, Best Paper Finalist (<1%) </h5>
-						<h5> <a href="https://youtu.be/doTjXDFtyK0" target="_blank ">
-								Video Slides (5 mins) <i class="fab fa-youtube fa-1x " style="color:red "> </i> </a>,
-							<a href="https://www.youtube.com/watch?v=j7A83F6PRAE&t=310s" target="_blank ">
-								Live Recorded Video Presentation (5 mins) <i class="fab fa-youtube fa-1x "
-									style="color:red "> </i> </a>
-						</h5>
-						<a href="https://github.com/lvzhaoyang/DeeperInverseCompositionalAlgorithm" target="_blank">
-							Code
-							<i class="fab fa-github fa-1x" style="color:black "></i> </a>,
-						<a href='http://www.cvlibs.net/publications/Lv2019CVPR_poster.pdf' , target="_blank">
-							Poster <i class="far fa-file fa-1x " style="color:red "> </i> </a>
-			</div>
-		</div>
+		<script>
+			addPaper({
+				"image": "images/eccv18figs/overview.png",
+				"title": "Learning Rigidity in Dynamic Scenes with a Moving Camera for 3D Motion Field Estimation",
+				"authors": "Zhaoyang Lv, Kihwan Kim, Alejandro Troccoli, Deqing Sun, James M. Rehg, Jan Kautz",
+				"conference": "European Conference on Computer Vision (ECCV) 2018",
+				"arxivLink": "https://arxiv.org/abs/1804.04259",
+				"projectLink": "http://research.nvidia.com/publication/2018-09_Learning-Rigidity-in",
+				"videoLink": "https://youtu.be/MnTHkOCY790",
+				"codeLink": "https://github.com/NVlabs/learningrigidity"
+			});
+		</script>
 
-		<hr class="featurette-divider ">
-
-		<!-- iclr19 -->
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="# " target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/iclr19_overview.png">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Multi-class Classification without Multi-class Labels
-				</h4>
-				<h5 class="text-muted "> Yen-Chang Hsu, <strong>Zhaoyang Lv</strong>, Joel Schlosser, Phillip Odom,
-					Zsolt Kira </h5>
-				<h5> <a href="https://openreview.net/forum?id=SJzR2iRcK7 " target="_blank "> International Conference on
-						Learning
-						Representations (ICLR) 2019, openreview
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a> </h5>
-				<h5>
-					<a href="https://github.com/GT-RIPL/L2C" target="_blank"> Code
-						<i class="fab fa-github fa-1x" style="color:black "></i> </a>
-				</h5>
-			</div>
-		</div>
-
-		<hr class="featurette-divider ">
-
-		<!-- iclr18 -->
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="# " target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/cvpr17figs/visualization.png ">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Learning to Cluster in Order to Transfer across Domains and Tasks
-				</h4>
-				<h5 class="text-muted "> Yen-Chang Hsu, <strong>Zhaoyang Lv</strong>, Zsolt Kira </h5>
-				<h5>
-					<a href="https://arxiv.org/abs/1711.10125 " target="_blank"> International Conference on Learning
-						Representations (ICLR) 2018, arXiv:1711.10125
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a>
-				</h5>
-				<h5>
-					<a href="https://github.com/GT-RIPL/L2C" target="_blank"> Code
-						<i class="fab fa-github fa-1x" style="color:black "></i> </a>,
-					<a href="https://mlatgt.blog/2018/04/29/learning-to-cluster/" target="_blank">
-						A blog post on Machine Learning @ Gerogia Tech
-						<i class="fab fa-wordpress-simple fa-1x"></i> </a>
-				</h5>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Deep Image Category Discovery using a Transferred Similarity Function
-				</h4>
-				<h5 class="text-muted "> Yen-Chang Hsu, <strong>Zhaoyang Lv</strong>, Zsolt Kira </h5>
-				<h5> <a href="http://arxiv.org/abs/1612.01253 " target="_blank "> arXiv:1612.01253
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a> </h5>
-			</div>
-		</div>
-
-		<hr class="featurette-divider ">
-
-		<!-- eccv18 -->
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="https://youtu.be/MnTHkOCY790" target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/eccv18figs/overview.png ">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> Learning Rigidity in Dynamic Scenes with a Moving Camera for 3D Motion
-					Field
-					Estimation </h4>
-				<h5 class="text-muted "> <strong>Zhaoyang Lv</strong>, Kihwan Kim, Alejandro Troccoli, Deqing Sun, James
-					M. Rehg, Jan Kautz </h5>
-				<h5> <a
-						href='http://openaccess.thecvf.com/content_ECCV_2018/papers/Zhaoyang_Lv_Learning_Rigidity_in_ECCV_2018_paper.pdf'>European
-						Conference on Computer Vision (ECCV) 2018 <i class="ai ai-springer fa-1x "
-							style="color:blue "></i>,
-						<a href='https://arxiv.org/abs/1804.04259'> arXiv 1804.04259 <i class="ai ai-arxiv fa-1x "
-								style="color:red "></i>
-				</h5>
-				<h5> <a href="https://mlatgt.blog/2018/09/06/learning-rigidity-and-scene-flow-estimation/">
-						A blog post on Machine Learning @ Georgia Tech <i class="fab fa-wordpress-simple fa-1x"></i>
-				</h5>
-				<h5> <a href="http://research.nvidia.com/publication/2018-09_Learning-Rigidity-in" target="_blank ">
-						Project
-						Page <i class="fa fa-home fa-1x " aria-hidden="true "> </i> </a>,
-					<a href="https://youtu.be/MnTHkOCY790" target="_blank ">
-						Video <i class="fab fa-youtube fa-1x " style="color:red "> </i> </a>, Code:
-					<a href="https://github.com/NVlabs/learningrigidity" target="_blank"> Rigidity and scene flow <i
-							class="fab fa-github fa-1x" style="color:black "></i> </a> ;
-					<a href="https://github.com/lvzhaoyang/RefRESH" target="_blank"> RefRESH dataset creation toolkit <i
-							class="fab fa-github fa-1x" style="color:black "></i> </a>
-				</h5>
-				<h5>
-					<a href="http://on-demand.gputechconf.com/gtc/2018/presentation/s8798-learning-rigidity-in-dynamic-scenes-for-scene-flow-estimation-v2.pdf
-						" target="_blank "> Nvidia GTC 2018 Presentation Slides (Credit to Kihwan) <i class="far fa-file fa-1x "
-							style="color:red ">
-						</i> </a>
-				</h5>
-			</div>
-		</div>
-
-		<hr class="featurette-divider ">
-
-		<!-- eccv16 -->
-		<div class="row featurette ">
-			<div class="col-md-4 ">
-				<a href="project/Lv16eccv.html " target="_blank ">
-					<img class="img-thumbnail img-responsive " src="images/eccv16figs/pipeline.png ">
-				</a>
-			</div>
-			<div class="col-md-8 ">
-				<h4 class="featurette-heading "> A Continuous Optimization Approach for Efficient and Accurate Scene
-					Flow </h4>
-				<h5 class="text-muted "> <strong>Zhaoyang Lv</strong>, Chris Beall, Pablo F. Alcantarilla, Fuxin Li,
-					Zsolt Kira, Frank Dellaert
-				</h5>
-				<h5> <a href="http://link.springer.com/chapter/10.1007/978-3-319-46484-8_46/fulltext.html "
-						target="_blank ">
-						European Conference on Computer Vision (ECCV) 2016
-						<i class="ai ai-springer fa-1x " style="color:blue "></i> </a>,
-					<a href='http://arxiv.org/abs/1607.07983'> arXiv 1607.07983
-						<i class="ai ai-arxiv fa-1x " style="color:red "></i>
-				</h5>
-				<h5> <a href="project/Lv16eccv.html " target="_blank "> Project Page <i class="fa fa-home fa-1x "
-							aria-hidden="true ">
-						</i> </a> </h5>
-			</div>
-		</div>
-
-		<hr class="featurette-divider ">
+		<script>
+			addPaper({
+				"image": "images/eccv16figs/pipeline.png",
+				"title": "A Continuous Optimization Approach for Efficient and Accurate Scene Flow",
+				"authors": "Zhaoyang Lv, Chris Beall, Pablo F. Alcantarilla, Fuxin Li, Zsolt Kira, Frank Dellaert",
+				"conference": "European Conference on Computer Vision (ECCV) 2016",
+				"arxivLink": "https://arxiv.org/abs/1607.07983",
+				"projectLink": "project/Lv16eccv.html",
+				"videoLink": "",
+				"codeLink": ""
+			});
+		</script>
 
 
 
 		</br> </br>
 
-		<h3 id="projects " , class="page-header "> Misc. Projects </h3> </br>
+		<h3 id="projects" class="page-header mt-5 mb-4">Misc. Projects</h3>
 
-		<div class="row featurette ">
-			<div class="col-md-2 ">
-				<img class="img-thumbnail img-responsive " src="images/mini-SAM.png">
+		<div id="projects-container"></div>
+
+		<script>
+			function addProject({
+				image,
+				title,
+				authors,
+				description,
+				codeLink,
+				arxivLink,
+				projectLink,
+				videoLink
+			}) {
+				const container = document.getElementById("projects-container") || document.body;
+				const highlightedAuthors = authors.replace(/(zhaoyang lv)/gi, '<strong>$1</strong>');
+				const paperHTML = `
+			<div class="row mb-4">
+				<div class="col-md-4">
+					<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
+						<img class="img-fluid rounded" src="${image}" alt="${title}">
+					</a>
+				</div>
+				<div class="col-md-8">
+					<h4 class="fw-bold mb-2">${title}</h4>
+					<p class="text-muted mb-2">${highlightedAuthors}</p>
+					${description ? `<p class="mb-2">${description}</p>` : ""}
+					<div class="d-flex gap-3 flex-wrap">
+						${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Website <i class="fas fa-home"></i></a>` : ""}
+						${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
+						${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">Code <i class="fab fa-github"></i></a>` : ""}
+						${arxivLink ? `<a href="${arxivLink}" target="_blank" class="btn btn-outline-secondary btn-sm">arXiv <i class="ai ai-arxiv"></i></a>` : ""}
+					</div>
+				</div>
 			</div>
-			<div class="col-md-10">
-				<h4 class="featurette-heading">
-					miniSAM: A Flexible Factor Graph Non-linear Least Squares
-					Optimization Framework
-				</h4>
-				<h5 class="text-muted "> <a href="https://www.cc.gatech.edu/grads/j/jdong37/">Jing Dong </a>(main
-					contributor), <strong>Zhaoyang Lv</strong> </h5>
-				<a href="https://github.com/dongjing3309/minisam" target="_blank"> Code
-					<i class="fab fa-github fa-1x" style="color:black "></i> </a>,
-				<a href="https://arxiv.org/pdf/1909.00903.pdf" target="_blank "> arXiv
-					<i class="ai ai-arxiv fa-1x " style="color:red "></i> </a>
-				<br>
-				<a href="https://minisam.readthedocs.io/ "> Project Website </a>
-				<!-- <br> -->
-				<!-- Our least square solver is built on top of the factor graph concept as GTSAM, and support:
-				<li> Full Python/NumPy API, which enables more agile development and easy binding with existing Python projects, and </li>
-				<li> A wide list of sparse linear solvers, including CUDA enabled sparse linear solvers. </li> -->
+			<hr class="my-4">	
+		`;
+				container.insertAdjacentHTML("beforeend", paperHTML);
+			}
+		</script>
+
+		<script>
+			addProject({
+				"image": "images/aria_pilot_dataset.png",
+				"title": "1st Project Aria Tutorial & Aria Pilot Dataset & Aria Data Tools",
+				"authors": "Project lead for Project Aria Tutorial Program Team; Aria Pilot Dataset; Aria Data Tool Team",
+				"description": "Computer Vision and Pattern Recognition (CVPR) 2022 Tutorial Program. The first open program and open tools for Project Aria.",
+				"codeLink": "https://github.com/facebookresearch/Aria_data_tools",
+				"arxivLink": "https://arxiv.org/abs/2308.13561",
+				"projectLink": "https://about.facebook.com/realitylabs/projectaria/datasets",
+				"videoLink": ""
+			});
+		</script>
+
+		<script>
+			addProject({
+				"image": "images/mini-SAM.png",
+				"title": "miniSAM: A Flexible Factor Graph Non-linear Least Squares Optimization Framework",
+				"authors": "Jing Dong (main contributor), Zhaoyang Lv",
+				"description": "Our least square solver is built on top of the factor graph concept as GTSAM, and supports: Full Python/NumPy API, which enables more agile development and easy binding with existing Python projects, and a wide list of sparse linear solvers, including CUDA enabled sparse linear solvers.",
+				"codeLink": "https://github.com/dongjing3309/minisam",
+				"arxivLink": "https://arxiv.org/pdf/1909.00903.pdf",
+				"projectLink": "https://minisam.readthedocs.io/",
+				"videoLink": ""
+			});
+		</script>
+
+		<!-- Master Thesis - Keeping detailed description -->
+		<div class="row mb-4">
+			<div class="col-md-4">
+				<a href="http://www.doc.ic.ac.uk/teaching/distinguished-projects/2013/l.zhaoyang.pdf" target="_blank" class="text-decoration-none">
+					<img class="img-fluid rounded" src="images/KinfuSeg.png" alt="KinfuSeg System Image">
+				</a>
+			</div>
+			<div class="col-md-8">
+				<h4 class="fw-bold mb-2">KinfuSeg: A Dynamic SLAM Approach Based on KinectFusion</h4>
+				<p class="text-muted mb-2"><strong>Zhaoyang Lv</strong></p>
+				<p class="mb-2">
+					<a href="http://www.doc.ic.ac.uk/teaching/distinguished-projects/2013/l.zhaoyang.pdf" target="_blank" class="text-decoration-none">
+						Master Thesis <i class="far fa-file-pdf" style="color:red"></i>
+					</a>, Imperial College London
+				</p>
+				<p class="mb-2">
+					<a href="http://www.youtube.com/watch?v=gphF88LtHuM" target="_blank" class="text-decoration-none">
+						Video Slides <i class="fab fa-youtube" style="color:red"></i>
+					</a>
+				</p>
+				<p class="mb-2">Thesis Advisor: <a href="http://www.doc.ic.ac.uk/~ajd/" target="_blank" class="text-decoration-none">Prof. Andrew Davison</a></p>
+				<p class="mb-2">Distinguished Thesis in Department of Computing (3 among 71), Top 5%</p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<!-- Master thesis-->
-
-		<div class="row featurette ">
-			<div class="col-md-2 ">
-				<img class="img-thumbnail img-responsive " src="images/KinfuSeg.png " alt="KinfuSeg System Image ">
-			</div>
-			<div class="col-md-10 ">
-				<h4 class="featurette-heading "> KinfuSeg: A Dynamic SLAM Approach Based on KinectFusion </h4>
-
-				<h5 class="text-muted "> <strong>Zhaoyang Lv</strong> </h5>
-				<h5>
-					<a href="http://www.doc.ic.ac.uk/teaching/distinguished-projects/2013/l.zhaoyang.pdf " ,
-						target="_blank">
-						Master Thesis <i class="far fa-file-pdf fa-1x " style="color:red "></i> </a>,
-					Imperial College London
-				</h5>
-				<h5>
-					<a href="http://www.youtube.com/watch?v=gphF88LtHuM " , target="_blank ">
-						Video Slides <i class="fab fa-youtube fa-1x" style="color:red "></i> </a>
-				</h5>
-				<h5> Thesis Advisor: <a href="http://www.doc.ic.ac.uk/~ajd/ " , target="_blank ">Prof. Andrew
-						Davison</a></h5>
-				<h5>
-					Distinguished Thesis in Department of Computing (3 among 71), Top 5%
-				</h5>
-			</div>
-		</div>
-
-
-		<hr class="featurette-divider ">
+		<hr class="my-4">
 
 		<!-- the end of all projects -->
 
 		</br> </br>
 
-		<!-- Internships -->
-		<h3 id="Experiences" , class="page-header "> Work Experiences </h3> </br>
+		<!-- Work Experiences -->
+		<h3 id="Experiences" class="page-header mt-5 mb-4">Work Experiences</h3>
 
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/rlr_logo.jpg ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/rlr_logo.jpg" style="max-width: 50px;">
 			</div>
-			<div class="col-md-10 ">
-				<h4 class="featurette-heading "> Reality Labs Research, Redmond, Sept. 2019 - Present </h4>
-				<h5> Research Scientist </h5>
-			</div>
-		</div>
-
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/nvidia.jpeg ">
-			</div>
-			<div class="col-md-10 ">
-				<h4 class="featurette-heading "> Nvidia Research, Santa Clara, Jan. 2019 - May 2019 </h4>
-				<h5> Research Intern </h5>
-				<h5>Director: <a href='http://jankautz.com/'> Dr. Jan Kautz</a>, Mentors: <a
-						href="https://www.cc.gatech.edu/~kihwan23/ " , target="_blank ">Dr. Kihwan Kim</a>, <a
-						href='http://people.seas.harvard.edu/~dqsun/'>
-						Dr. Deqing Sun</a>, <a href='https://www.linkedin.com/in/alejandrotroccoli/'> Dr. Alejandro
-						Troccoli</a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Reality Labs Research, Redmond</strong> <span class="text-muted">Sept. 2019 - Present</span></p>
+				<p class="mb-0 fs-6 text-muted">Research Scientist</p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/mpi.jpeg ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/nvidia.jpeg" style="max-width: 50px;">
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Autonomous Vision Group, Max Planck Institute for Intelligent System,
-					Tuebingen,
-					June 2018 - Nov. 2018</h4>
-				<h5> Visiting student </h5>
-				<h5>Advisor: <a href='https://avg.is.tuebingen.mpg.de/person/ageiger'> Prof. Andreas Geiger</a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Nvidia Research, Santa Clara</strong> <span class="text-muted">Jan. 2019 - May 2019</span></p>
+				<p class="mb-0 fs-6 text-muted">Research Intern</p>
+				<p class="mb-0 fs-6 text-muted">Director: <a href='http://jankautz.com/' class="text-decoration-none">Dr. Jan Kautz</a>, Mentors: <a href="https://www.cc.gatech.edu/~kihwan23/" target="_blank" class="text-decoration-none">Dr. Kihwan Kim</a>, <a href='http://people.seas.harvard.edu/~dqsun/' class="text-decoration-none">Dr. Deqing Sun</a>, <a href='https://www.linkedin.com/in/alejandrotroccoli/' class="text-decoration-none">Dr. Alejandro Troccoli</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/nvidia.jpeg ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/mpi.jpeg" style="max-width: 50px;">
 			</div>
-			<div class="col-md-10 ">
-				<h4 class="featurette-heading "> Nvidia Research, Santa Clara, May 2017 - Aug. 2017 </h4>
-				<h5> Research Intern </h5>
-				<h5>Director: <a href='http://jankautz.com/'> Dr. Jan Kautz</a>, Mentors: <a
-						href="https://www.cc.gatech.edu/~kihwan23/ " , target="_blank ">Dr. Kihwan Kim</a>, <a
-						href='http://people.seas.harvard.edu/~dqsun/'>
-						Dr. Deqing Sun</a>, <a href='https://www.linkedin.com/in/alejandrotroccoli/'> Dr. Alejandro
-						Troccoli</a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Autonomous Vision Group, Max Planck Institute for Intelligent System, Tuebingen</strong> <span class="text-muted">June 2018 - Nov. 2018</span></p>
+				<p class="mb-0 fs-6 text-muted">Visiting student</p>
+				<p class="mb-0 fs-6 text-muted">Advisor: <a href='https://avg.is.tuebingen.mpg.de/person/ageiger' class="text-decoration-none">Prof. Andreas Geiger</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/qualcomm.png ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/nvidia.jpeg" style="max-width: 50px;">
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Qualcomm Research, Greater San Diego, May 2016 - Aug. 2016 </h4>
-				<h5> Research Intern </h5>
-				<h5> Manager: <a href="http://people.lids.mit.edu/aliagha/ " , target="_blank ">Dr. Ali Agha</a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Nvidia Research, Santa Clara</strong> <span class="text-muted">May 2017 - Aug. 2017</span></p>
+				<p class="mb-0 fs-6 text-muted">Research Intern</p>
+				<p class="mb-0 fs-6 text-muted">Director: <a href='http://jankautz.com/' class="text-decoration-none">Dr. Jan Kautz</a>, Mentors: <a href="https://www.cc.gatech.edu/~kihwan23/" target="_blank" class="text-decoration-none">Dr. Kihwan Kim</a>, <a href='http://people.seas.harvard.edu/~dqsun/' class="text-decoration-none">Dr. Deqing Sun</a>, <a href='https://www.linkedin.com/in/alejandrotroccoli/' class="text-decoration-none">Dr. Alejandro Troccoli</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/zju.jpeg ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/qualcomm.png" style="max-width: 50px;">
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Zhejiang University, Hangzhou, Dec. 2013 - July 2014 </h4>
-				<h5> Visiting student </h5>
-				<h5> Mentor: <a href="http://www.cad.zju.edu.cn/home/gfzhang/ " , target="_blank ">Prof. Guofeng
-						Zhang</a></h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Qualcomm Research, Greater San Diego</strong> <span class="text-muted">May 2016 - Aug. 2016</span></p>
+				<p class="mb-0 fs-6 text-muted">Research Intern</p>
+				<p class="mb-0 fs-6 text-muted">Manager: <a href="http://people.lids.mit.edu/aliagha/" target="_blank" class="text-decoration-none">Dr. Ali Agha</a></p>
 			</div>
 		</div>
 
-		</br> </br>
-
-		<h3 id="activities " , class="page-header "> Misc. Activities </h3> </br>
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<p class='text-center'>
-					<i class="fas fa-chalkboard-teacher fa-3x"></i>
-				</p>
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/zju.jpeg" style="max-width: 50px;">
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Instructor for <a
-						href='https://www.cc.gatech.edu/~zlv30/courses/CS4476.html'>CS
-						4476 Introduction to Computer Vision</a>, Georgia Tech, Summer 2019 </h4>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Zhejiang University, Hangzhou</strong> <span class="text-muted">Dec. 2013 - July 2014</span></p>
+				<p class="mb-0 fs-6 text-muted">Visiting student</p>
+				<p class="mb-0 fs-6 text-muted">Mentor: <a href="http://www.cad.zju.edu.cn/home/gfzhang/" target="_blank" class="text-decoration-none">Prof. Guofeng Zhang</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
+		<h3 id="activities" class="page-header mt-5 mb-4">Misc. Activities</h3>
 
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<p class='text-center'>
-					<i class="fas fa-chalkboard-teacher fa-3x"></i>
-				</p>
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<i class="fas fa-chalkboard-teacher text-muted" style="font-size: 1.5rem;"></i>
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Teaching assistant for <a
-						href='https://www.cc.gatech.edu/classes/AY2018/cs7643_fall/'>CS
-						7643 Deep Learning</a>, Georgia Tech, Fall 2017 </h4>
-				<h5> Instructor: <a href='https://www.cc.gatech.edu/~dbatra/'> Prof. Dhruv Batra </a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Instructor for <a href='https://www.cc.gatech.edu/~zlv30/courses/CS4476.html' class="text-decoration-none">CS 4476 Introduction to Computer Vision</a></strong> <span class="text-muted">Georgia Tech, Summer 2019</span></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<p class='text-center'>
-					<i class="fas fa-chalkboard-teacher fa-3x"></i>
-				</p>
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<i class="fas fa-chalkboard-teacher text-muted" style="font-size: 1.5rem;"></i>
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Teaching assistant for <a
-						href='https://www.cc.gatech.edu/~hays/compvision/'>CS
-						4476 / 6476 Computer Vision</a>, Georgia Tech, Fall 2016 </h4>
-				<h5>Instructor: <a href='https://www.cc.gatech.edu/~hays/'> Prof. James Hays </a> </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Teaching assistant for <a href='https://www.cc.gatech.edu/classes/AY2018/cs7643_fall/' class="text-decoration-none">CS 7643 Deep Learning</a></strong> <span class="text-muted">Georgia Tech, Fall 2017</span></p>
+				<p class="mb-0 fs-6 text-muted">Instructor: <a href='https://www.cc.gatech.edu/~dbatra/' class="text-decoration-none">Prof. Dhruv Batra</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<img class="img-thumbnail img-responsive " src="images/robograds.png ">
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<i class="fas fa-chalkboard-teacher text-muted" style="font-size: 1.5rem;"></i>
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Vice President in Public Relation for <a
-						href='http://robograds.gatech.edu/'>
-						RoboGrads</a>, Georgia Tech, Fall 2016 - Spring 2017 </h4>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Teaching assistant for <a href='https://www.cc.gatech.edu/~hays/compvision/' class="text-decoration-none">CS 4476 / 6476 Computer Vision</a></strong> <span class="text-muted">Georgia Tech, Fall 2016</span></p>
+				<p class="mb-0 fs-6 text-muted">Instructor: <a href='https://www.cc.gatech.edu/~hays/' class="text-decoration-none">Prof. James Hays</a></p>
 			</div>
 		</div>
 
-		<hr class="featurette-divider ">
-
-		<div class="row featurette ">
-			<div class="col-md-1 ">
-				<p class='text-center'>
-					<i class="ai ai-academia fa-3x"></i>
-				</p>
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<img class="img-fluid rounded" src="images/robograds.png" style="max-width: 50px;">
 			</div>
-			<div class="col-md-11 ">
-				<h4 class="featurette-heading "> Multiple reviewer services for CVPR, ICCV, ECCV, ICLR, SIGGRAPH, SIGGRAPH Asia, ICRA,
-					IROS, T-PAMI, IJCV, T-MM</h4>
-				<h5> Outstanding Reviewer, CVPR 2019 </h5>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Vice President in Public Relation for <a href='http://robograds.gatech.edu/' class="text-decoration-none">RoboGrads</a></strong> <span class="text-muted">Georgia Tech, Fall 2016 - Spring 2017</span></p>
+			</div>
+		</div>
+
+		<div class="row mb-3">
+			<div class="col-md-1">
+				<i class="ai ai-academia text-muted" style="font-size: 1.5rem;"></i>
+			</div>
+			<div class="col-md-11">
+				<p class="mb-1"><strong>Multiple reviewer services</strong> <span class="text-muted">CVPR, ICCV, ECCV, ICLR, SIGGRAPH, SIGGRAPH Asia, ICRA, IROS, T-PAMI, IJCV, T-MM</span></p>
+				<p class="mb-0 fs-6 text-muted">Outstanding Reviewer, CVPR 2019</p>
 			</div>
 		</div>
 
@@ -982,20 +756,23 @@ Great thanks for all of these open source guys.
 
 			<hr class="featurette-divider "> -->
 
-		<p class="pull-right">
-			<a href="# "> Back to top <i class="fa fa-long-arrow-up "></i> </a>
-		</p>
-		<p>
-			&copy; Zhaoyang Lv. &middot; <a href="# ">Contact</a> &middot;</a>
-		</p>
+		<div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top">
+			<p class="mb-0">
+				&copy; Zhaoyang Lv. &middot; <a href="#" class="text-decoration-none">Contact</a>
+			</p>
+			<p class="mb-0">
+				<a href="#" class="text-decoration-none">Back to top <i class="fas fa-arrow-up"></i></a>
+			</p>
+		</div>
 	</div>
 
-	<!-- end of the footer-->
-
-	<!-- Bootstrap core JavaScript ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script>
-	<script src="../../dist/js/bootstrap.min.js "></script>
+	<!-- Bootstrap 5 JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	
+	<!-- Initialize highlight.js -->
+	<script>
+		hljs.highlightAll();
+	</script>
 </body>
 
 </html>

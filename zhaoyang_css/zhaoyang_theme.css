@@ -1,36 +1,110 @@
+/* Custom styles for Zhaoyang Lv's website */
+
 body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+/* Custom button hover effects */
+.btn-outline-primary:hover,
+.btn-outline-danger:hover,
+.btn-outline-dark:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
 }
 
-/* Gradient transparent - color - transparent */		
-.style-two {
-    border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+/* Social media icons hover effect */
+.navbar-nav .nav-link:hover,
+.social-links a:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
-.carousel-project-caption {
-    position: relative;
-    left: auto;
-    right: auto;
+/* Publication cards hover effect */
+.publication-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-.carousel-project-text {
-    position: relative;
-    margin-left: 400px;
-    margin-right: 400px;
+/* Custom gradient divider */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.3), transparent);
+  border: none;
+  margin: 2rem 0;
+}
+
+/* Responsive image improvements */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* Custom blockquote styling */
+.blockquote {
+  border-left: 4px solid #007bff;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* Improved link styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Social media icons spacing */
+.social-links i {
+  margin: 0 0.5rem;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .social-links {
+    justify-content: center !important;
+  }
+  
+  .publication-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Dark mode support (if needed later) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here */
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .btn,
+  .social-links {
+    display: none !important;
+  }
+  
+  body {
+    padding-top: 0;
+  }
 }
