@@ -141,6 +141,28 @@ body.dark-mode #theme-toggle-mobile {
   color: #fff !important;
 }
 
+/* Dark mode fixes for publication/project buttons */
+body.dark-mode .btn-outline-danger {
+  color: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+  background-color: transparent !important;
+}
+body.dark-mode .btn-outline-danger:hover, body.dark-mode .btn-outline-danger:focus {
+  background-color: #ff4d4f !important;
+  color: #fff !important;
+  border-color: #ff4d4f !important;
+}
+body.dark-mode .btn-outline-dark {
+  color: #fff !important;
+  border-color: #fff !important;
+  background-color: transparent !important;
+}
+body.dark-mode .btn-outline-dark:hover, body.dark-mode .btn-outline-dark:focus {
+  background-color: #fff !important;
+  color: #23272b !important;
+  border-color: #fff !important;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .container {
