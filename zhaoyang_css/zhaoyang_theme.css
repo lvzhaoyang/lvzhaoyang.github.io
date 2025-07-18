@@ -122,6 +122,25 @@ body.dark-mode a:hover {
   color: #219ebc;
 }
 
+/* Floating dark mode button (mobile) */
+#theme-toggle-mobile {
+  background-color: rgba(33, 37, 41, 0.85) !important; /* Same as navbar */
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+#theme-toggle-mobile:focus, #theme-toggle-mobile:hover {
+  background-color: rgba(52, 58, 64, 1) !important;
+  color: #fff !important;
+}
+#theme-toggle-mobile .fa-moon, #theme-toggle-mobile .fa-sun {
+  color: #fff !important;
+}
+body.dark-mode #theme-toggle-mobile {
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  color: #fff !important;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .container {
@@ -154,4 +173,29 @@ body.dark-mode a:hover {
   body {
     padding-top: 0;
   }
+}
+
+/* Navbar shadow and blur */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  background-color: rgba(33, 37, 41, 0.85) !important;
+}
+
+/* Touch targets for navbar links */
+.navbar-nav .nav-link {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Touch targets for social icons */
+.d-flex.gap-3 a {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.d-flex.gap-3 a:focus, .d-flex.gap-3 a:hover {
+  background: rgba(0,0,0,0.05);
 }

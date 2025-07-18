@@ -230,30 +230,32 @@ Great thanks for all of these open source guys.
 				let arxivText = arxivLabel || `arXiv ${arxivLink.split('/').pop()}`;
 				
 				const paperHTML = `
-			<div class="row mb-4">
-				<div class="col-12 col-md-4 mb-3 mb-md-0">
-					<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
-						<img class="img-fluid rounded" src="${image}" alt="${title}" loading="lazy">
-					</a>
-				</div>
-				<div class="col-12 col-md-8">
-					<h4 class="fw-bold mb-2">${title}</h4>
-					<p class="text-muted mb-2">${highlightedAuthors}</p>
-					<p class="mb-2">${conference}, 
-						<a href="${arxivLink}" target="_blank" class="text-decoration-none">
-							${arxivText}
-							<i class="ai ai-arxiv" style="color:red"></i>
+			<div class="card mb-4 shadow-sm">
+				<div class="row g-0 align-items-center">
+					<div class="col-12 col-md-4 text-center p-3">
+						<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
+							<img class="img-fluid rounded" src="${image}" alt="${title}" loading="lazy">
 						</a>
-					</p>
-					${awards ? `<p class="mb-2"><span class="badge bg-warning text-dark">🏆 ${awards}</span></p>` : ""}
-					<div class="d-flex gap-3 flex-wrap">
-						${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Page <i class="fas fa-home"></i></a>` : ""}
-						${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
-						${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">${codeLabel} <i class="fab fa-github"></i></a>` : ""}
+					</div>
+					<div class="col-12 col-md-8 p-3">
+						<h4 class="fw-bold mb-2">${title}</h4>
+						<p class="text-muted mb-2">${highlightedAuthors}</p>
+						<p class="mb-2">${conference}, 
+							<a href="${arxivLink}" target="_blank" class="text-decoration-none">
+								${arxivText}
+								<i class="ai ai-arxiv" style="color:red"></i>
+							</a>
+						</p>
+						${awards ? `<p class="mb-2"><span class="badge bg-warning text-dark">🏆 ${awards}</span></p>` : ""}
+						<div class="d-flex gap-3 flex-wrap">
+							${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Page <i class="fas fa-home"></i></a>` : ""}
+							${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
+							${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">${codeLabel} <i class="fab fa-github"></i></a>` : ""}
+						</div>
 					</div>
 				</div>
 			</div>
-			<hr class="my-4">	
+			<!-- <hr class="my-4"> -->
 		`;
 				container.insertAdjacentHTML("beforeend", paperHTML);
 			}
@@ -545,25 +547,27 @@ Great thanks for all of these open source guys.
 				const container = document.getElementById("projects-container") || document.body;
 				const highlightedAuthors = authors.replace(/(zhaoyang lv)/gi, '<strong>$1</strong>');
 				const paperHTML = `
-			<div class="row mb-4">
-				<div class="col-12 col-md-4 mb-3 mb-md-0">
-					<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
-						<img class="img-fluid rounded" src="${image}" alt="${title}" loading="lazy">
-					</a>
-				</div>
-				<div class="col-12 col-md-8">
-					<h4 class="fw-bold mb-2">${title}</h4>
-					<p class="text-muted mb-2">${highlightedAuthors}</p>
-					${description ? `<p class="mb-2">${description}</p>` : ""}
-					<div class="d-flex gap-3 flex-wrap">
-						${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Website <i class="fas fa-home"></i></a>` : ""}
-						${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
-						${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">Code <i class="fab fa-github"></i></a>` : ""}
-						${arxivLink ? `<a href="${arxivLink}" target="_blank" class="btn btn-outline-secondary btn-sm">arXiv <i class="ai ai-arxiv"></i></a>` : ""}
+			<div class="card mb-4 shadow-sm">
+				<div class="row g-0 align-items-center">
+					<div class="col-12 col-md-4 text-center p-3">
+						<a href="${projectLink || '#'}" target="_blank" class="text-decoration-none">
+							<img class="img-fluid rounded" src="${image}" alt="${title}" loading="lazy">
+						</a>
+					</div>
+					<div class="col-12 col-md-8 p-3">
+						<h4 class="fw-bold mb-2">${title}</h4>
+						<p class="text-muted mb-2">${highlightedAuthors}</p>
+						${description ? `<p class="mb-2">${description}</p>` : ""}
+						<div class="d-flex gap-3 flex-wrap">
+							${projectLink ? `<a href="${projectLink}" target="_blank" class="btn btn-outline-primary btn-sm">Project Website <i class="fas fa-home"></i></a>` : ""}
+							${videoLink ? `<a href="${videoLink}" target="_blank" class="btn btn-outline-danger btn-sm">Video <i class="fab fa-youtube"></i></a>` : ""}
+							${codeLink ? `<a href="${codeLink}" target="_blank" class="btn btn-outline-dark btn-sm">Code <i class="fab fa-github"></i></a>` : ""}
+							${arxivLink ? `<a href="${arxivLink}" target="_blank" class="btn btn-outline-secondary btn-sm">arXiv <i class="ai ai-arxiv"></i></a>` : ""}
+						</div>
 					</div>
 				</div>
 			</div>
-			<hr class="my-4">	
+			<!-- <hr class="my-4"> -->
 		`;
 				container.insertAdjacentHTML("beforeend", paperHTML);
 			}
