@@ -67,6 +67,11 @@ Great thanks for all of these open source guys.
 					<li class="nav-item">
 						<a class="nav-link" href="cv/cv.pdf" target="_blank">CV</a>
 					</li>
+					<li class="nav-item d-flex align-items-center">
+						<button id="theme-toggle" class="btn btn-outline-light btn-sm ms-3" aria-label="Toggle dark mode">
+							<i id="theme-toggle-icon" class="fas fa-moon"></i>
+						</button>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -775,6 +780,31 @@ Great thanks for all of these open source guys.
 	<script>
 		hljs.highlightAll();
 	</script>
+
+	<!-- Dark mode toggle script -->
+	<script>
+  function setThemeIcon(isDark) {
+    const icon = document.getElementById('theme-toggle-icon');
+    if (icon) {
+      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+  }
+
+  // On load, set theme from localStorage
+  (function() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+    }
+    setThemeIcon(isDark);
+  })();
+
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeIcon(isDark);
+  });
+</script>
 </body>
 
 </html>

@@ -75,6 +75,53 @@ a:hover {
   margin: 0 0.5rem;
 }
 
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+}
+body.dark-mode .bg-light,
+body.dark-mode .rounded-3 {
+  background-color: #23272b !important;
+  color: #e0e0e0 !important;
+}
+body.dark-mode .navbar,
+body.dark-mode .navbar.bg-dark {
+  background-color: #23272b !important;
+}
+body.dark-mode .card {
+  background-color: #23272b !important;
+  color: #e0e0e0 !important;
+}
+body.dark-mode .btn-outline-primary {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+body.dark-mode .btn-outline-primary:hover {
+  background-color: #e0e0e0;
+  color: #23272b;
+}
+body.dark-mode .btn-outline-light {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+body.dark-mode .btn-outline-light:hover {
+  background-color: #e0e0e0;
+  color: #23272b;
+}
+body.dark-mode .text-muted {
+  color: #b0b0b0 !important;
+}
+body.dark-mode hr {
+  border-color: #444 !important;
+}
+body.dark-mode a {
+  color: #8ecae6;
+}
+body.dark-mode a:hover {
+  color: #219ebc;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .container {
