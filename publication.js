@@ -9,6 +9,14 @@ const publications = [
 		"codeLink": "https://github.com/zxhuang1698/VidFM3D"
 	},
 	{
+		"image": "images/art_teaser.gif",
+		"title": "ART: Articulated Reconstruction Transformer",
+		"authors": "Zizhang Li, Cheng Zhang, Zhengqin Li, Henry Howard-Jenkins, Zhaoyang Lv, Chen Geng, Jiajun Wu, Richard Newcombe, Jakob Engel, Zhao Dong",
+		"conference": "Computer Vision and Pattern Recognition (CVPR) 2026",
+		"arxivLink": "https://arxiv.org/abs/2512.14671",
+		"projectLink": "https://kyleleey.github.io/ART/"
+	},
+	{
 		"image": "images/4dgt_teaser.gif",
 		"title": "4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos",
 		"authors": "Zhen Xu, Zhengqin Li, Zhao Dong, Xiaowei Zhou, Richard Newcombe, Zhaoyang Lv",
