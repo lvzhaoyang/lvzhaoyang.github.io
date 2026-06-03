@@ -1,5 +1,14 @@
 const publications = [
 	{
+		"image": "images/vidfm3d_teaser.png",
+		"title": "How Much 3D Do Video Foundation Models Encode?",
+		"authors": "Zixuan Huang, Xiang Li, Zhaoyang Lv, James M. Rehg",
+		"conference": "Computer Vision and Pattern Recognition (CVPR) 2026",
+		"arxivLink": "https://arxiv.org/abs/2512.19949",
+		"projectLink": "https://vidfm-3d-probe.github.io/",
+		"codeLink": "https://github.com/zxhuang1698/VidFM3D"
+	},
+	{
 		"image": "images/4dgt_teaser.gif",
 		"title": "4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos",
 		"authors": "Zhen Xu, Zhengqin Li, Zhao Dong, Xiaowei Zhou, Richard Newcombe, Zhaoyang Lv",
